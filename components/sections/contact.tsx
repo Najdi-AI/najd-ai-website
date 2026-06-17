@@ -94,7 +94,7 @@ export function Contact() {
   };
 
   const fieldShell =
-    "border-none bg-white/[0.04] text-foreground placeholder:text-muted-foreground/70 dark:bg-white/[0.04] dark:text-foreground dark:shadow-[0px_0px_1px_1px_rgba(255,255,255,0.06)] focus-visible:ring-najd-green/40 dark:focus-visible:ring-najd-green/40";
+    "border-none bg-white/[0.04] text-foreground placeholder:text-muted-foreground/70 dark:bg-white/[0.04] dark:text-foreground dark:shadow-[0px_0px_1px_1px_rgba(255,255,255,0.06)] focus-visible:ring-najd-blue/40 dark:focus-visible:ring-najd-blue/40";
 
   const statusMessage =
     status === "success" ? f.success : status === "error" ? f.error : errorKey ? f[errorKey] : "";
@@ -133,7 +133,7 @@ export function Contact() {
                     className="flex items-center gap-2 bg-najd-ink px-5 py-2.5 text-sm font-semibold text-foreground"
                     {...anchorProps}
                   >
-                    <LinkIcon className="h-4 w-4 text-najd-green" aria-hidden="true" />
+                    <LinkIcon className="h-4 w-4 text-najd-blue" aria-hidden="true" />
                     <span>{link.label}</span>
                   </HoverBorderGradient>
                 );
@@ -158,7 +158,7 @@ export function Contact() {
               <div className="flex flex-col gap-2">
                 <Label htmlFor="contact-name" className="text-foreground">
                   {f.name}
-                  <span className="ms-1 text-najd-green" aria-hidden="true">
+                  <span className="ms-1 text-najd-blue" aria-hidden="true">
                     *
                   </span>
                 </Label>
@@ -179,7 +179,7 @@ export function Contact() {
               <div className="flex flex-col gap-2">
                 <Label htmlFor="contact-email" className="text-foreground">
                   {f.email}
-                  <span className="ms-1 text-najd-green" aria-hidden="true">
+                  <span className="ms-1 text-najd-blue" aria-hidden="true">
                     *
                   </span>
                 </Label>
@@ -227,7 +227,7 @@ export function Contact() {
                   value={interest}
                   onChange={(e) => setInterest(e.target.value)}
                   className={cn(
-                    "h-10 w-full rounded-md border-none bg-white/[0.04] px-3 py-2 text-sm text-foreground shadow-[0px_0px_1px_1px_rgba(255,255,255,0.06)] transition duration-200 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-najd-green/40",
+                    "h-10 w-full rounded-md border-none bg-white/[0.04] px-3 py-2 text-sm text-foreground shadow-[0px_0px_1px_1px_rgba(255,255,255,0.06)] transition duration-200 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-najd-blue/40",
                     dir === "rtl" ? "text-end" : "text-start"
                   )}
                 >
@@ -243,7 +243,7 @@ export function Contact() {
             <div className="flex flex-col gap-2">
               <Label htmlFor="contact-message" className="text-foreground">
                 {f.message}
-                <span className="ms-1 text-najd-green" aria-hidden="true">
+                <span className="ms-1 text-najd-blue" aria-hidden="true">
                   *
                 </span>
               </Label>
@@ -256,7 +256,7 @@ export function Contact() {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder={f.messagePlaceholder}
                 aria-required="true"
-                className="w-full resize-y rounded-md border-none bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 shadow-[0px_0px_1px_1px_rgba(255,255,255,0.06)] transition duration-200 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-najd-green/40"
+                className="w-full resize-y rounded-md border-none bg-white/[0.04] px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 shadow-[0px_0px_1px_1px_rgba(255,255,255,0.06)] transition duration-200 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-najd-blue/40"
               />
             </div>
 
@@ -267,7 +267,7 @@ export function Contact() {
                   className={cn(
                     "text-sm",
                     status === "success"
-                      ? "text-najd-green"
+                      ? "text-najd-blue"
                       : status === "error" || errorKey
                         ? "text-red-400"
                         : "text-muted-foreground"
@@ -280,7 +280,7 @@ export function Contact() {
 
             <div className="flex flex-col gap-3">
               <p className="text-xs text-muted-foreground">
-                <span className="text-najd-green" aria-hidden="true">
+                <span className="text-najd-blue" aria-hidden="true">
                   *
                 </span>{" "}
                 {dir === "rtl" ? "الحقول المعلّمة بـ * مطلوبة" : "Fields marked * are required"}
@@ -294,8 +294,8 @@ export function Contact() {
                   className={cn(
                     "inline-flex min-w-[120px] items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:opacity-80",
                     status === "success"
-                      ? "bg-najd-green-light text-najd-ink"
-                      : "bg-najd-green text-najd-ink hover:bg-najd-green-light"
+                      ? "bg-najd-blue-light text-najd-ink"
+                      : "bg-najd-blue text-najd-ink hover:bg-najd-blue-light"
                   )}
                 >
                   {status === "submitting" ? (

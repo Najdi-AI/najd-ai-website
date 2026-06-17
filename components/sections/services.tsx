@@ -11,7 +11,7 @@ import { SectionShell, SectionHeader, Reveal } from "@/components/sections/primi
 type Tone = "green" | "blue" | "muted";
 
 const TONE_STYLES: Record<Tone, string> = {
-  green: "border-najd-green/30 bg-najd-green/[0.08] text-najd-green",
+  green: "border-najd-blue/30 bg-najd-blue/[0.08] text-najd-blue",
   blue: "border-najd-blue/30 bg-najd-blue/[0.08] text-najd-blue",
   muted: "border-border/70 bg-white/[0.03] text-muted-foreground",
 };
@@ -97,10 +97,10 @@ export function Services() {
                 onKeyDown={(e) => onTabKeyDown(e, index)}
                 className={cn(
                   "shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition-colors",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-najd-green/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-najd-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                   isActive
-                    ? "border-transparent bg-najd-gradient text-white shadow-[0_10px_30px_-12px_rgba(43,182,115,0.7)]"
-                    : "border-border/70 bg-white/[0.02] text-muted-foreground hover:border-najd-green/40 hover:text-foreground"
+                    ? "border-transparent bg-najd-gradient text-white shadow-[0_10px_30px_-12px_rgba(38,153,214,0.7)]"
+                    : "border-border/70 bg-white/[0.02] text-muted-foreground hover:border-najd-blue/40 hover:text-foreground"
                 )}
               >
                 {t.label}
@@ -127,12 +127,12 @@ export function Services() {
             {cards.map((c) => (
               <CardSpotlight
                 key={c.title}
-                color="rgba(43,182,115,0.10)"
+                color="rgba(38,153,214,0.10)"
                 className="group/spotlight h-full !rounded-2xl !border-border/60 !bg-white/[0.02] !p-6"
               >
                 <div className="relative z-10 flex h-full flex-col items-start gap-4 text-start">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-najd-green/25 bg-najd-green/[0.07]">
-                    <Icon name={c.icon} className="h-6 w-6 text-najd-green" />
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-najd-blue/25 bg-najd-blue/[0.07]">
+                    <Icon name={c.icon} className="h-6 w-6 text-najd-blue" />
                   </span>
 
                   <h3 className="font-display text-lg font-bold leading-snug text-foreground">

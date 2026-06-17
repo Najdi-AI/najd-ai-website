@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Twitter, Mail, MessageCircle, MapPin } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Mail, MessageCircle, MapPin } from "lucide-react";
 import { useI18n } from "@/components/providers";
 import { Logo } from "@/components/site/logo";
 import { siteConfig, whatsappLink, mailtoLink } from "@/lib/site";
@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-border/60 bg-najd-ink">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-najd-green/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-najd-blue/40 to-transparent" />
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div className="flex flex-col gap-4">
           <Logo locale={locale} symbolSize={40} />
@@ -20,7 +20,7 @@ export function Footer() {
             {dict.footer.tagline}
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <MapPin className="h-4 w-4 text-najd-green" />
+            <MapPin className="h-4 w-4 text-najd-blue" />
             {isAr ? siteConfig.locationAr : siteConfig.location}
           </div>
           <div className="mt-1 flex items-center gap-2.5">
@@ -30,9 +30,20 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition-colors hover:border-najd-green/50 hover:text-najd-green"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition-colors hover:border-najd-blue/50 hover:text-najd-blue"
               >
                 <Linkedin className="h-4 w-4" />
+              </a>
+            )}
+            {siteConfig.social.instagram && (
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition-colors hover:border-najd-blue/50 hover:text-najd-blue"
+              >
+                <Instagram className="h-4 w-4" />
               </a>
             )}
             {siteConfig.social.x && (
@@ -41,7 +52,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition-colors hover:border-najd-green/50 hover:text-najd-green"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 text-muted-foreground transition-colors hover:border-najd-blue/50 hover:text-najd-blue"
               >
                 <Twitter className="h-4 w-4" />
               </a>
@@ -82,13 +93,13 @@ export function Footer() {
             href={whatsappLink(dict.contact.quick.whatsappMsg)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-najd-green"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-najd-blue"
           >
             <MessageCircle className="h-4 w-4" /> {siteConfig.phoneDisplay}
           </a>
           <a
             href={mailtoLink()}
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-najd-green"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-najd-blue"
           >
             <Mail className="h-4 w-4" /> {siteConfig.email}
           </a>

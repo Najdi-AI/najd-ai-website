@@ -4,13 +4,14 @@ import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n/config";
 
 /**
- * Najd AI Solutions brand lockup: the gradient symbol mark (immutable per brand
- * guidelines) + the wordmark. White wordmark for the dark UI.
+ * Najd AI Solutions brand lockup: the official blue-gradient symbol mark
+ * (immutable per brand guidelines) + the wordmark in Thmanyah. White wordmark
+ * for the dark UI; "AI" / "نجد" accented in brand blue.
  */
 export function Logo({
   locale,
   className,
-  symbolSize = 38,
+  symbolSize = 34,
   wordmark = true,
   href = true,
 }: {
@@ -21,26 +22,29 @@ export function Logo({
   href?: boolean;
 }) {
   const isAr = locale === "ar";
+  const label = isAr ? "حلول نجد للذكاء الاصطناعي" : "Najd AI Solutions";
   const inner = (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <Image
-        src="/brand/logo-symbol.png"
-        alt={isAr ? "حلول نجد للذكاء الاصطناعي" : "Najd AI Solutions"}
+        src="/brand/logo-mark.svg"
+        alt={label}
         width={symbolSize}
         height={symbolSize}
         priority
-        className="h-auto w-auto"
-        style={{ height: symbolSize, width: "auto" }}
+        className="shrink-0"
       />
       {wordmark && (
-        <span className="font-display text-[15px] font-bold leading-none tracking-tight text-foreground sm:text-base">
+        <span
+          className="font-display font-bold leading-none tracking-tight text-foreground"
+          style={{ fontSize: Math.round(symbolSize * 0.46) }}
+        >
           {isAr ? (
             <>
-              حلول <span className="text-najd-green">نجد</span>
+              حلول <span className="text-najd-blue">نجد</span>
             </>
           ) : (
             <>
-              Najd <span className="text-najd-green">AI</span>
+              Najd <span className="text-najd-blue">AI</span>
             </>
           )}
         </span>
@@ -52,8 +56,8 @@ export function Logo({
   return (
     <Link
       href={`/${locale}`}
-      aria-label={isAr ? "حلول نجد للذكاء الاصطناعي" : "Najd AI Solutions"}
-      className="rounded-md outline-none ring-najd-green/60 transition-opacity hover:opacity-90 focus-visible:ring-2"
+      aria-label={label}
+      className="rounded-md outline-none ring-najd-blue/60 transition-opacity hover:opacity-90 focus-visible:ring-2"
     >
       {inner}
     </Link>

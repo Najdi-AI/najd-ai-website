@@ -20,11 +20,11 @@ export function CopyButton({ text, className }: { text: string; className?: stri
       }}
       aria-label="Copy"
       className={cn(
-        "inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border/70 text-muted-foreground transition-colors hover:border-najd-green/50 hover:text-najd-green",
+        "inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border/70 text-muted-foreground transition-colors hover:border-najd-blue/50 hover:text-najd-blue",
         className
       )}
     >
-      {copied ? <Check className="h-4 w-4 text-najd-green" /> : <Copy className="h-4 w-4" />}
+      {copied ? <Check className="h-4 w-4 text-najd-blue" /> : <Copy className="h-4 w-4" />}
     </button>
   );
 }

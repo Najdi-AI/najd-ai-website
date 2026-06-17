@@ -15,12 +15,12 @@ function StackPanel({ name, pills }: { name: string; pills: string[] }) {
     >
       {/* brand gradient tint + glows over the panel */}
       <div className="pointer-events-none absolute inset-0 bg-najd-gradient opacity-[0.14]" />
-      <div className="pointer-events-none absolute -end-10 -top-10 h-32 w-32 rounded-full bg-najd-green/25 blur-3xl" />
+      <div className="pointer-events-none absolute -end-10 -top-10 h-32 w-32 rounded-full bg-najd-blue/25 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-12 -start-8 h-32 w-32 rounded-full bg-najd-blue/20 blur-3xl" />
 
       <div className="relative">
-        <span className="inline-flex items-center gap-2 rounded-full border border-najd-green/30 bg-najd-green/[0.08] px-3 py-1 text-[11px] font-semibold text-najd-green">
-          <span className="h-1.5 w-1.5 rounded-full bg-najd-green" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-najd-blue/30 bg-najd-blue/[0.08] px-3 py-1 text-[11px] font-semibold text-najd-blue">
+          <span className="h-1.5 w-1.5 rounded-full bg-najd-blue" />
           {name}
         </span>
       </div>

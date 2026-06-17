@@ -20,7 +20,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? dict.theme.toLight : dict.theme.toDark}
       className={cn(
-        "inline-flex h-8 w-8 items-center justify-center rounded-full border border-border/70 bg-white/5 text-foreground/80 transition-colors hover:border-najd-green/50 hover:text-foreground",
+        "inline-flex h-8 w-8 items-center justify-center rounded-full border border-border/70 bg-white/5 text-foreground/80 transition-colors hover:border-najd-blue/50 hover:text-foreground",
         className
       )}
     >

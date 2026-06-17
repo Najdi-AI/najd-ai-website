@@ -1,24 +1,22 @@
 /**
  * Single source of truth for contact channels, social links and SEO basics.
- * NOTE: values marked PLACEHOLDER should be replaced with the real business
- * details — they are wired through the whole site from here.
  */
 export const siteConfig = {
   name: "Najd AI Solutions",
   nameAr: "حلول نجد للذكاء الاصطناعي",
   shortName: "Najd AI",
-  url: "https://najdaisolutions.com", // PLACEHOLDER domain
-  // Contact channels (PLACEHOLDER — replace with real values)
-  email: "hello@najdaisolutions.com",
-  phoneDisplay: "+966 50 000 0000",
-  phoneE164: "+966500000000",
-  whatsappE164: "966500000000", // digits only, no '+', for wa.me links
+  url: "https://najdiai.com",
+  email: "info@najdiai.com",
+  phoneDisplay: "+966 54 943 3473",
+  phoneE164: "+966549433473",
+  whatsappE164: "966549433473", // digits only, no '+', for wa.me links
   location: "Riyadh, Saudi Arabia",
   locationAr: "الرياض، المملكة العربية السعودية",
   social: {
-    linkedin: "https://www.linkedin.com/company/najd-ai-solutions",
-    x: "https://x.com/najdaisolutions",
-    github: "",
+    instagram: "https://instagram.com/najdiai.sa",
+    x: "https://x.com/najdiai",
+    linkedin: "https://www.linkedin.com/company/najdiai",
+    handle: "najdiai.sa",
   },
 } as const;
 

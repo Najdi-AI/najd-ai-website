@@ -61,8 +61,8 @@ export default function ComponentPage({
               {entry.category}
             </span>
             {entry.usedOnSite && (
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-najd-green/10 px-2.5 py-1 text-[11px] font-medium text-najd-green">
-                <span className="h-1.5 w-1.5 rounded-full bg-najd-green" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-najd-blue/10 px-2.5 py-1 text-[11px] font-medium text-najd-blue">
+                <span className="h-1.5 w-1.5 rounded-full bg-najd-blue" />
                 {dict.showcase.usedOnSite}
               </span>
             )}
@@ -71,7 +71,7 @@ export default function ComponentPage({
 
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <div className="flex min-w-0 flex-1 items-center gap-2 rounded-xl border border-border/60 bg-white/[0.02] px-3 py-2.5">
-              <Terminal className="h-4 w-4 shrink-0 text-najd-green" />
+              <Terminal className="h-4 w-4 shrink-0 text-najd-blue" />
               <code dir="ltr" className="min-w-0 flex-1 truncate font-mono text-xs text-foreground/90">
                 {entry.install}
               </code>

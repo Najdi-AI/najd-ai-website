@@ -5,7 +5,7 @@ import type { ComponentType } from "react";
 
 const Loading = () => (
   <div className="flex h-40 w-full items-center justify-center">
-    <div className="h-6 w-6 animate-spin rounded-full border-2 border-najd-green/30 border-t-najd-green" />
+    <div className="h-6 w-6 animate-spin rounded-full border-2 border-najd-blue/30 border-t-najd-blue" />
   </div>
 );
 

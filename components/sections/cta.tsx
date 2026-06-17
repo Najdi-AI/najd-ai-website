@@ -19,12 +19,12 @@ export function Cta() {
         <BackgroundGradientAnimation
           gradientBackgroundStart="rgb(8, 19, 37)"
           gradientBackgroundEnd="rgb(5, 11, 22)"
-          firstColor="43, 182, 115"
+          firstColor="38, 153, 214"
           secondColor="38, 153, 214"
           thirdColor="33, 88, 119"
-          fourthColor="43, 182, 115"
+          fourthColor="38, 153, 214"
           fifthColor="38, 153, 214"
-          pointerColor="43, 182, 115"
+          pointerColor="38, 153, 214"
           interactive={false}
           containerClassName="absolute inset-0 h-full w-full"
         />

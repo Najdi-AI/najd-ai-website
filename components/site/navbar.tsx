@@ -63,7 +63,7 @@ export function Navbar() {
           </div>
           <Link
             href="#contact"
-            className="group hidden items-center gap-1.5 rounded-full bg-najd-green px-4 py-2 text-[13px] font-semibold text-najd-ink shadow-[0_8px_24px_-10px_rgba(43,182,115,0.7)] transition-all hover:-translate-y-0.5 hover:bg-najd-green-light sm:inline-flex"
+            className="group hidden items-center gap-1.5 rounded-full bg-najd-blue px-4 py-2 text-[13px] font-semibold text-najd-ink shadow-[0_8px_24px_-10px_rgba(38,153,214,0.7)] transition-all hover:-translate-y-0.5 hover:bg-najd-blue-light sm:inline-flex"
           >
             {dict.nav.cta}
             <ArrowRight
@@ -108,7 +108,7 @@ export function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-najd-green px-4 py-3 text-sm font-semibold text-najd-ink hover:bg-najd-green-light"
+                className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-najd-blue px-4 py-3 text-sm font-semibold text-najd-ink hover:bg-najd-blue-light"
               >
                 {dict.nav.cta}
               </Link>

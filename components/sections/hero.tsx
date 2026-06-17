@@ -17,7 +17,7 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-najd-ink pb-20 pt-28">
       {/* background layers */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(43,182,115,0.12),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(38,153,214,0.12),transparent_60%)]" />
       <div
         className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_45%,black,transparent)]"
         style={{
@@ -27,7 +27,7 @@ export function Hero() {
         }}
       />
       <BackgroundBeams className="opacity-60" />
-      <div className="pointer-events-none absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-najd-green/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-najd-blue/10 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 bottom-0 h-[26rem] w-[26rem] rounded-full bg-najd-blue/10 blur-[120px]" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-5 text-center sm:px-8">
@@ -35,7 +35,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-najd-green/25 bg-najd-green/[0.07] px-4 py-1.5 text-[11px] font-semibold tracking-wide text-najd-green sm:text-xs"
+          className="inline-flex items-center gap-2 rounded-full border border-najd-blue/25 bg-najd-blue/[0.07] px-4 py-1.5 text-[11px] font-semibold tracking-wide text-najd-blue sm:text-xs"
         >
           <Sparkles className="h-3.5 w-3.5" />
           {h.badge}
@@ -65,7 +65,7 @@ export function Hero() {
             words={h.typewriter}
             animateLetters={dir !== "rtl"}
             className="text-lg font-semibold sm:text-xl md:text-2xl"
-            textClassName="text-najd-green"
+            textClassName="text-najd-blue"
           />
         </motion.div>
 
@@ -86,7 +86,7 @@ export function Hero() {
         >
           <Link
             href="#services"
-            className="group inline-flex items-center gap-2 rounded-full bg-najd-green px-6 py-3 text-sm font-semibold text-najd-ink shadow-[0_12px_36px_-12px_rgba(43,182,115,0.75)] transition-transform hover:-translate-y-0.5 hover:bg-najd-green-light"
+            className="group inline-flex items-center gap-2 rounded-full bg-najd-blue px-6 py-3 text-sm font-semibold text-najd-ink shadow-[0_12px_36px_-12px_rgba(38,153,214,0.75)] transition-transform hover:-translate-y-0.5 hover:bg-najd-blue-light"
           >
             {h.ctaPrimary}
             <ArrowRight
@@ -98,7 +98,7 @@ export function Hero() {
           </Link>
           <Link
             href="#divisions"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.03] px-6 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition-colors hover:border-najd-green/40 hover:text-foreground"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.03] px-6 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition-colors hover:border-najd-blue/40 hover:text-foreground"
           >
             {h.ctaSecondary}
           </Link>

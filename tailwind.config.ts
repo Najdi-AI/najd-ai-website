@@ -50,19 +50,19 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Najd AI Solutions brand palette (from official guidelines)
+        // Najd AI Solutions brand palette (official Helol Najd guidelines: navy + blue)
         najd: {
-          green: "#2bb673",
-          "green-light": "#34c97f",
-          "green-dark": "#1e9c5f",
           blue: "#2699d6",
           "blue-light": "#4db4e6",
+          "blue-bright": "#0098dd",
+          "blue-deep": "#0f6fae",
+          indigo: "#28295f",
           teal: "#215877",
-          navy: "#0d2745",
-          "navy-2": "#172844",
-          "navy-deep": "#081a30",
-          ink: "#050b16",
-          "ink-2": "#081120",
+          navy: "#172844",
+          "navy-2": "#1d3052",
+          "navy-deep": "#0f1f38",
+          ink: "#070e1b",
+          "ink-2": "#0b1626",
         },
       },
       borderRadius: {
@@ -71,13 +71,13 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-plex)", "var(--font-plex-ar)", "system-ui", "sans-serif"],
-        arabic: ["var(--font-plex-ar)", "var(--font-plex)", "sans-serif"],
-        display: ["var(--font-plex)", "var(--font-plex-ar)", "sans-serif"],
+        sans: ["var(--font-thmanyah)", "system-ui", "sans-serif"],
+        arabic: ["var(--font-thmanyah)", "system-ui", "sans-serif"],
+        display: ["var(--font-thmanyah)", "system-ui", "sans-serif"],
       },
       backgroundImage: {
-        "najd-gradient": "linear-gradient(135deg, #2bb673 0%, #215877 55%, #0d2745 100%)",
-        "najd-gradient-soft": "linear-gradient(135deg, #34c97f 0%, #2699d6 100%)",
+        "najd-gradient": "linear-gradient(135deg, #2699d6 0%, #0f6fae 52%, #172844 100%)",
+        "najd-gradient-soft": "linear-gradient(135deg, #4db4e6 0%, #2699d6 100%)",
       },
       animation: {
         first: "moveVertical 30s ease infinite",

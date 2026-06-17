@@ -49,12 +49,12 @@ export function Eyebrow({ children, className }: { children: ReactNode; classNam
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border border-najd-green/25 bg-najd-green/[0.06] px-3.5 py-1.5 text-[11px] font-semibold text-najd-green",
+        "inline-flex items-center gap-2 rounded-full border border-najd-blue/25 bg-najd-blue/[0.06] px-3.5 py-1.5 text-[11px] font-semibold text-najd-blue",
         locale === "ar" ? "tracking-normal" : "uppercase tracking-[0.18em]",
         className
       )}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-najd-green motion-safe:animate-pulse" />
+      <span className="h-1.5 w-1.5 rounded-full bg-najd-blue motion-safe:animate-pulse" />
       {children}
     </span>
   );

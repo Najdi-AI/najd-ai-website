@@ -16,7 +16,7 @@ import {
 type Tone = "green" | "blue" | "muted";
 
 const toneClasses: Record<Tone, string> = {
-  green: "border-najd-green/30 bg-najd-green/[0.08] text-najd-green",
+  green: "border-najd-blue/30 bg-najd-blue/[0.08] text-najd-blue",
   blue: "border-najd-blue/30 bg-najd-blue/[0.08] text-najd-blue",
   muted: "border-border/70 bg-white/[0.03] text-muted-foreground",
 };
@@ -32,7 +32,7 @@ function DivisionHeader() {
         className="absolute inset-0 opacity-60 transition-transform duration-500 ease-out group-hover/bento:translate-x-2 group-hover/bento:translate-y-1"
         style={{
           backgroundImage:
-            "radial-gradient(rgba(43,182,115,0.25) 1px, transparent 1px)",
+            "radial-gradient(rgba(38,153,214,0.25) 1px, transparent 1px)",
           backgroundSize: "16px 16px",
           maskImage:
             "radial-gradient(ellipse 80% 70% at 50% 40%, black, transparent)",
@@ -41,7 +41,7 @@ function DivisionHeader() {
         }}
       />
       {/* corner glow */}
-      <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-najd-green/20 blur-2xl transition-opacity duration-300 group-hover/bento:opacity-90" />
+      <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-najd-blue/20 blur-2xl transition-opacity duration-300 group-hover/bento:opacity-90" />
       <div className="pointer-events-none absolute -bottom-10 -left-6 h-24 w-24 rounded-full bg-najd-blue/15 blur-2xl" />
     </div>
   );
@@ -81,17 +81,17 @@ export function Divisions() {
                 <BentoGridItem
                   className={cn(
                     "h-full border-border/60 bg-white/[0.02] backdrop-blur-sm transition-all duration-300",
-                    "hover:-translate-y-1 hover:border-najd-green/40 hover:shadow-[0_20px_50px_-24px_rgba(43,182,115,0.55)]",
+                    "hover:-translate-y-1 hover:border-najd-blue/40 hover:shadow-[0_20px_50px_-24px_rgba(38,153,214,0.55)]",
                   )}
                   header={<DivisionHeader />}
                   icon={
                     <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-najd-green/25 bg-najd-green/[0.08]">
-                        <Icon name={item.icon} className="h-6 w-6 text-najd-green" />
+                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-najd-blue/25 bg-najd-blue/[0.08]">
+                        <Icon name={item.icon} className="h-6 w-6 text-najd-blue" />
                       </span>
                       <span
                         className={cn(
-                          "text-[10px] font-semibold text-najd-green/80",
+                          "text-[10px] font-semibold text-najd-blue/80",
                           locale === "ar"
                             ? "tracking-normal"
                             : "uppercase tracking-[0.18em]",

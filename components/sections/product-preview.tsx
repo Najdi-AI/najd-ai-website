@@ -20,7 +20,7 @@ export function ProductPreview() {
       className="relative w-full overflow-hidden bg-najd-ink py-10 md:py-0"
     >
       {/* ambient brand glows */}
-      <div className="pointer-events-none absolute -left-32 top-1/4 h-[26rem] w-[26rem] rounded-full bg-najd-green/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-32 top-1/4 h-[26rem] w-[26rem] rounded-full bg-najd-blue/10 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 bottom-1/4 h-[24rem] w-[24rem] rounded-full bg-najd-blue/10 blur-[120px]" />
 
       <div className="relative z-10 dark">

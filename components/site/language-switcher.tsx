@@ -23,7 +23,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       onClick={switchLocale}
       aria-label={dict.langSwitch.aria}
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-colors hover:border-najd-green/50 hover:text-foreground",
+        "inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-white/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition-colors hover:border-najd-blue/50 hover:text-foreground",
         className
       )}
     >

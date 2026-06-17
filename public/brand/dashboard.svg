@@ -4,10 +4,10 @@
       <stop stop-color="#081325"/><stop offset="1" stop-color="#050b16"/>
     </linearGradient>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#34c97f"/><stop offset="1" stop-color="#215877"/>
+      <stop stop-color="#4db4e6"/><stop offset="1" stop-color="#215877"/>
     </linearGradient>
     <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
-      <stop stop-color="#2bb673" stop-opacity="0.5"/><stop offset="1" stop-color="#2bb673" stop-opacity="0"/>
+      <stop stop-color="#2699d6" stop-opacity="0.5"/><stop offset="1" stop-color="#2699d6" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="area2" x1="0" y1="0" x2="0" y2="1">
       <stop stop-color="#2699d6" stop-opacity="0.45"/><stop offset="1" stop-color="#2699d6" stop-opacity="0"/>
@@ -22,8 +22,8 @@
     <text x="30" y="14" fill="#f2f6fc" font-size="15" font-weight="700">Najd AI</text>
   </g>
   <g fill="#8aa0bd" font-size="13" transform="translate(28,90)">
-    <rect x="-10" y="-14" width="200" height="34" rx="8" fill="#2bb673" fill-opacity="0.12"/>
-    <text y="8" fill="#34c97f" font-weight="600">Overview</text>
+    <rect x="-10" y="-14" width="200" height="34" rx="8" fill="#2699d6" fill-opacity="0.12"/>
+    <text y="8" fill="#4db4e6" font-weight="600">Overview</text>
     <text y="52">Automation</text>
     <text y="92">Knowledge</text>
     <text y="132">Analytics</text>
@@ -36,7 +36,7 @@
   <text x="260" y="48" fill="#f2f6fc" font-size="22" font-weight="700">Operations Intelligence</text>
   <text x="260" y="72" fill="#8aa0bd" font-size="13">Real-time enterprise AI dashboard</text>
   <rect x="980" y="30" width="270" height="40" rx="20" fill="#0a1830" stroke="#172844"/>
-  <circle cx="1006" cy="50" r="5" fill="#2bb673"/>
+  <circle cx="1006" cy="50" r="5" fill="#2699d6"/>
   <text x="1022" y="55" fill="#8aa0bd" font-size="12">All systems operational</text>
 
   <!-- KPI cards -->
@@ -44,17 +44,17 @@
     <rect x="260" y="100" width="232" height="110" rx="14" fill="#0c1b33" stroke="#172844"/>
     <text x="282" y="134" fill="#8aa0bd" font-size="12">Calls automated</text>
     <text x="282" y="172" fill="#f2f6fc" font-size="30" font-weight="700">128,540</text>
-    <text x="282" y="194" fill="#34c97f" font-size="12">▲ 18.2%</text>
+    <text x="282" y="194" fill="#4db4e6" font-size="12">▲ 18.2%</text>
 
     <rect x="514" y="100" width="232" height="110" rx="14" fill="#0c1b33" stroke="#172844"/>
     <text x="536" y="134" fill="#8aa0bd" font-size="12">Avg. handle time</text>
     <text x="536" y="172" fill="#f2f6fc" font-size="30" font-weight="700">1.2s</text>
-    <text x="536" y="194" fill="#34c97f" font-size="12">▼ 34%</text>
+    <text x="536" y="194" fill="#4db4e6" font-size="12">▼ 34%</text>
 
     <rect x="768" y="100" width="232" height="110" rx="14" fill="#0c1b33" stroke="#172844"/>
     <text x="790" y="134" fill="#8aa0bd" font-size="12">CSAT (Arabic)</text>
     <text x="790" y="172" fill="#f2f6fc" font-size="30" font-weight="700">96.4%</text>
-    <text x="790" y="194" fill="#34c97f" font-size="12">▲ 4.1%</text>
+    <text x="790" y="194" fill="#4db4e6" font-size="12">▲ 4.1%</text>
 
     <rect x="1020" y="100" width="232" height="110" rx="14" fill="#0c1b33" stroke="#172844"/>
     <text x="1042" y="134" fill="#8aa0bd" font-size="12">Compliance flags</text>
@@ -69,14 +69,14 @@
   <path d="M284 500 L344 470 L404 482 L464 430 L524 446 L584 392 L644 410 L704 350 L764 372 L824 318 L876 336 L876 524 L284 524 Z" fill="url(#area2)"/>
   <path d="M284 500 L344 470 L404 482 L464 430 L524 446 L584 392 L644 410 L704 350 L764 372 L824 318 L876 336" stroke="#2699d6" stroke-width="2.5" fill="none"/>
   <path d="M284 514 L344 500 L404 506 L464 470 L524 484 L584 452 L644 462 L704 430 L764 444 L824 408 L876 420 L876 524 L284 524 Z" fill="url(#area)"/>
-  <path d="M284 514 L344 500 L404 506 L464 470 L524 484 L584 452 L644 462 L704 430 L764 444 L824 408 L876 420" stroke="#2bb673" stroke-width="2.5" fill="none"/>
+  <path d="M284 514 L344 500 L404 506 L464 470 L524 484 L584 452 L644 462 L704 430 L764 444 L824 408 L876 420" stroke="#2699d6" stroke-width="2.5" fill="none"/>
 
   <!-- donut -->
   <rect x="920" y="234" width="332" height="320" rx="16" fill="#0c1b33" stroke="#172844"/>
   <text x="944" y="266" fill="#f2f6fc" font-size="15" font-weight="600">Channel mix</text>
   <g transform="translate(1086,400)">
     <circle r="78" fill="none" stroke="#152843" stroke-width="22"/>
-    <circle r="78" fill="none" stroke="#2bb673" stroke-width="22" stroke-dasharray="220 490" transform="rotate(-90)"/>
+    <circle r="78" fill="none" stroke="#2699d6" stroke-width="22" stroke-dasharray="220 490" transform="rotate(-90)"/>
     <circle r="78" fill="none" stroke="#2699d6" stroke-width="22" stroke-dasharray="140 490" stroke-dashoffset="-220" transform="rotate(-90)"/>
     <circle r="78" fill="none" stroke="#215877" stroke-width="22" stroke-dasharray="130 490" stroke-dashoffset="-360" transform="rotate(-90)"/>
     <text y="-2" text-anchor="middle" fill="#f2f6fc" font-size="24" font-weight="700">62%</text>

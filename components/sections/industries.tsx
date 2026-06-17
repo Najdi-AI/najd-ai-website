@@ -17,7 +17,7 @@ const CanvasRevealEffect = dynamic(
 );
 
 const BRAND_COLORS = [
-  [43, 182, 115], // najd-green
+  [38, 153, 214], // najd-blue
   [38, 153, 214], // najd-blue
 ];
 
@@ -41,7 +41,7 @@ function IndustryCard({
       onFocus={() => setHovered(true)}
       onBlur={() => setHovered(false)}
       tabIndex={0}
-      className="group/card relative flex h-32 items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-white/[0.02] outline-none transition-colors duration-300 hover:border-najd-green/40 focus-visible:border-najd-green/40 sm:h-36"
+      className="group/card relative flex h-32 items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-white/[0.02] outline-none transition-colors duration-300 hover:border-najd-blue/40 focus-visible:border-najd-blue/40 sm:h-36"
     >
       <AnimatePresence>
         {hovered && (
@@ -67,7 +67,7 @@ function IndustryCard({
       <div className="relative z-20 flex flex-col items-center gap-3 px-3 text-center">
         <Icon
           name={icon}
-          className="h-7 w-7 text-najd-green transition-colors duration-300 group-hover/card:text-white group-focus-within/card:text-white"
+          className="h-7 w-7 text-najd-blue transition-colors duration-300 group-hover/card:text-white group-focus-within/card:text-white"
         />
         <span className="text-sm font-semibold leading-tight text-foreground/90 transition-colors duration-300 group-hover/card:text-white group-focus-within/card:text-white">
           {name}

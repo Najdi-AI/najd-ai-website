@@ -24,15 +24,15 @@ export function Process() {
     content: (
       <Reveal
         className={cn(
-          "group rounded-2xl border border-border/60 bg-white/[0.02] p-5 backdrop-blur transition-colors hover:border-najd-green/40 sm:p-6",
+          "group rounded-2xl border border-border/60 bg-white/[0.02] p-5 backdrop-blur transition-colors hover:border-najd-blue/40 sm:p-6",
           isRtl ? "text-right" : "text-left"
         )}
       >
         <div className="mb-4 flex items-center gap-3">
-          <span className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-najd-green/25 bg-najd-green/[0.08]">
+          <span className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-najd-blue/25 bg-najd-blue/[0.08]">
             <Icon
               name={STEP_ICONS[i] ?? "sparkles"}
-              className="h-5 w-5 text-najd-green"
+              className="h-5 w-5 text-najd-blue"
             />
           </span>
           <span

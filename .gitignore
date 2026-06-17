@@ -37,3 +37,4 @@ next-env.d.ts
 
 # brand working files (source assets kept outside repo)
 /.brand-src
+/.brand-hn

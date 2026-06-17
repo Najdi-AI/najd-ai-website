@@ -18,7 +18,7 @@ import { motion } from "motion/react";
 type Cell = "yes" | "no" | "partial";
 
 const toneClass: Record<string, string> = {
-  green: "text-najd-green",
+  green: "text-najd-blue",
   blue: "text-najd-blue",
   muted: "text-muted-foreground",
 };
@@ -51,9 +51,9 @@ export function Differentiator() {
             {d.strengths.map((s) => (
               <motion.li key={s.title} variants={staggerItem}>
                 <CardSpotlight
-                  className="rounded-2xl border-border/60 bg-white/[0.02] p-5 transition-colors hover:border-najd-green/40"
+                  className="rounded-2xl border-border/60 bg-white/[0.02] p-5 transition-colors hover:border-najd-blue/40"
                   radius={260}
-                  color="rgba(43,182,115,0.10)"
+                  color="rgba(38,153,214,0.10)"
                 >
                   <div className="relative z-10 flex items-start gap-4">
                     <span
@@ -116,7 +116,7 @@ export function Differentiator() {
                     <th
                       scope="col"
                       className={cn(
-                        "px-3 py-4 text-center text-[11px] font-semibold text-najd-green sm:px-4",
+                        "px-3 py-4 text-center text-[11px] font-semibold text-najd-blue sm:px-4",
                         headCase
                       )}
                     >
@@ -170,7 +170,7 @@ function VendorCell({
   if (value === "yes") {
     return (
       <span className="inline-flex items-center justify-center">
-        <Check className="h-4 w-4 text-najd-green" aria-label="Included" />
+        <Check className="h-4 w-4 text-najd-blue" aria-label="Included" />
       </span>
     );
   }
@@ -207,9 +207,9 @@ function NajdCell({ note, dir }: { note?: string; dir: string }) {
         dir === "rtl" && "flex-row-reverse"
       )}
     >
-      <Check className="h-4 w-4 shrink-0 text-najd-green" aria-label="Included" />
+      <Check className="h-4 w-4 shrink-0 text-najd-blue" aria-label="Included" />
       {note && (
-        <span className="text-xs font-semibold text-najd-green">{note}</span>
+        <span className="text-xs font-semibold text-najd-blue">{note}</span>
       )}
     </span>
   );

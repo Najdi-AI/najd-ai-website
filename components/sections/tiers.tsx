@@ -73,7 +73,7 @@ function TierCard({
         "relative flex h-full flex-col gap-5 rounded-[1.4rem] p-6 sm:p-7",
         item.featured
           ? "bg-najd-ink"
-          : "border border-border/60 bg-white/[0.02] transition-colors duration-300 hover:border-najd-green/40"
+          : "border border-border/60 bg-white/[0.02] transition-colors duration-300 hover:border-najd-blue/40"
       )}
     >
       {item.featured && (
@@ -84,7 +84,7 @@ function TierCard({
             isRtl ? "start-4" : "end-4"
           )}
         >
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-najd-gradient px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_-8px_rgba(43,182,115,0.8)]">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-najd-gradient px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_-8px_rgba(38,153,214,0.8)]">
             {flagship}
           </span>
         </CardItem>
@@ -95,11 +95,11 @@ function TierCard({
           className={cn(
             "inline-flex h-12 w-12 items-center justify-center rounded-2xl border",
             item.featured
-              ? "border-najd-green/40 bg-najd-green/[0.12]"
-              : "border-border/60 bg-najd-green/[0.06]"
+              ? "border-najd-blue/40 bg-najd-blue/[0.12]"
+              : "border-border/60 bg-najd-blue/[0.06]"
           )}
         >
-          <Icon name={item.icon} className="h-6 w-6 text-najd-green" />
+          <Icon name={item.icon} className="h-6 w-6 text-najd-blue" />
         </span>
       </CardItem>
 
@@ -124,7 +124,7 @@ function TierCard({
       <CardItem translateZ={20} as="ul" className="mt-1 w-full space-y-2.5">
         {item.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2.5">
-            <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-najd-green/15 text-najd-green">
+            <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-najd-blue/15 text-najd-blue">
               <Check className="h-3 w-3" strokeWidth={2.5} aria-hidden="true" />
             </span>
             <span className="text-[13px] leading-snug text-foreground/80">

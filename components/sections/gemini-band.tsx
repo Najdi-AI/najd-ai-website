@@ -34,8 +34,8 @@ export function GeminiBand() {
       className="relative scroll-mt-24 bg-najd-ink"
     >
       {/* brand accent glows */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-najd-green/30 to-transparent" />
-      <div className="pointer-events-none absolute -left-32 top-1/3 h-[26rem] w-[26rem] rounded-full bg-najd-green/10 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-najd-blue/30 to-transparent" />
+      <div className="pointer-events-none absolute -left-32 top-1/3 h-[26rem] w-[26rem] rounded-full bg-najd-blue/10 blur-[120px]" />
       <div className="pointer-events-none absolute -right-32 bottom-1/3 h-[24rem] w-[24rem] rounded-full bg-najd-blue/10 blur-[120px]" />
 
       <div

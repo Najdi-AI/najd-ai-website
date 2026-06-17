@@ -72,7 +72,7 @@ export function ContainerTextFlip({
         "[background:linear-gradient(to_bottom,#f3f4f6,#e5e7eb)]",
         "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
         "dark:[background:linear-gradient(to_bottom,#172844,#081a30)]",
-        "dark:shadow-[inset_0_-1px_#081a30,inset_0_0_0_1px_rgba(43,182,115,.24),_0_4px_8px_#00000052]",
+        "dark:shadow-[inset_0_-1px_#081a30,inset_0_0_0_1px_rgba(38,153,214,.24),_0_4px_8px_#00000052]",
         className,
       )}
       key={words[currentWordIndex]}

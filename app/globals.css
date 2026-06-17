@@ -11,7 +11,7 @@
     --card-foreground: 212 69% 16%;
     --popover: 0 0% 100%;
     --popover-foreground: 212 69% 16%;
-    --primary: 152 62% 44%;
+    --primary: 201 68% 49%;
     --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 212 69% 16%;
@@ -23,7 +23,7 @@
     --destructive-foreground: 0 0% 100%;
     --border: 214 32% 89%;
     --input: 214 32% 89%;
-    --ring: 152 62% 44%;
+    --ring: 201 68% 49%;
     --radius: 0.75rem;
   }
 
@@ -35,7 +35,7 @@
     --card-foreground: 210 40% 96%;
     --popover: 213 64% 6%;
     --popover-foreground: 210 40% 96%;
-    --primary: 152 62% 44%;
+    --primary: 201 68% 49%;
     --primary-foreground: 213 66% 5%;
     --secondary: 213 38% 14%;
     --secondary-foreground: 210 40% 96%;
@@ -47,7 +47,7 @@
     --destructive-foreground: 0 0% 100%;
     --border: 213 34% 17%;
     --input: 213 34% 16%;
-    --ring: 152 62% 44%;
+    --ring: 201 68% 49%;
   }
 }
 
@@ -69,27 +69,27 @@
   /* Arabic pages use the Arabic font as the primary family */
   html[lang="ar"] body,
   [dir="rtl"] {
-    font-family: var(--font-plex-ar), var(--font-plex), system-ui, sans-serif;
+    font-family: var(--font-thmanyah), system-ui, sans-serif;
   }
 }
 
 @layer utilities {
   /* Brand gradient text */
   .text-gradient-najd {
-    background-image: linear-gradient(120deg, #34c97f 0%, #2699d6 55%, #2bb673 100%);
+    background-image: linear-gradient(120deg, #4db4e6 0%, #2699d6 50%, #0098dd 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .text-gradient-navy {
-    background-image: linear-gradient(120deg, #2bb673 0%, #215877 60%, #0d2745 100%);
+    background-image: linear-gradient(120deg, #2699d6 0%, #215877 60%, #0d2745 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   /* Subtle brand glow */
   .glow-najd {
-    box-shadow: 0 0 0 1px rgba(43, 182, 115, 0.18), 0 18px 60px -22px rgba(43, 182, 115, 0.45);
+    box-shadow: 0 0 0 1px rgba(38, 153, 214, 0.18), 0 18px 60px -22px rgba(38, 153, 214, 0.45);
   }
   .mask-fade-b {
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
@@ -119,11 +119,11 @@
   border: 2px solid hsl(213 66% 5%);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2bb673;
+  background: #2699d6;
 }
 
 ::selection {
-  background: rgba(43, 182, 115, 0.3);
+  background: rgba(38, 153, 214, 0.3);
   color: #ffffff;
 }
 

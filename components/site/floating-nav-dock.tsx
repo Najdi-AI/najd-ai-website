@@ -18,7 +18,7 @@ export function FloatingNavDock() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const cls = "h-full w-full text-najd-green";
+  const cls = "h-full w-full text-najd-blue";
   const items = [
     { title: locale === "ar" ? "الرئيسية" : "Home", icon: <Home className={cls} />, href: `/${locale}` },
     { title: locale === "ar" ? "الأقسام" : "Divisions", icon: <LayoutGrid className={cls} />, href: "#divisions" },
