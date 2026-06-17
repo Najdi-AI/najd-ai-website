@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn / semantic tokens — LIGHT (themed to Najd AI Solutions) */
+    --background: 0 0% 100%;
+    --foreground: 212 69% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 212 69% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 212 69% 16%;
+    --primary: 152 62% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 212 69% 16%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 201 68% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 89%;
+    --input: 214 32% 89%;
+    --ring: 152 62% 44%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* shadcn / semantic tokens — DARK (primary, futuristic) */
+    --background: 213 66% 5%;
+    --foreground: 210 40% 96%;
+    --card: 213 58% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 213 64% 6%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 152 62% 44%;
+    --primary-foreground: 213 66% 5%;
+    --secondary: 213 38% 14%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 213 33% 14%;
+    --muted-foreground: 213 22% 66%;
+    --accent: 201 68% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 34% 17%;
+    --input: 213 34% 16%;
+    --ring: 152 62% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Arabic pages use the Arabic font as the primary family */
+  html[lang="ar"] body,
+  [dir="rtl"] {
+    font-family: var(--font-plex-ar), var(--font-plex), system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Brand gradient text */
+  .text-gradient-najd {
+    background-image: linear-gradient(120deg, #34c97f 0%, #2699d6 55%, #2bb673 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-navy {
+    background-image: linear-gradient(120deg, #2bb673 0%, #215877 60%, #0d2745 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Subtle brand glow */
+  .glow-najd {
+    box-shadow: 0 0 0 1px rgba(43, 182, 115, 0.18), 0 18px 60px -22px rgba(43, 182, 115, 0.45);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  /* No-scrollbar helper */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Themed scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(213 66% 5%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(213 34% 20%);
+  border-radius: 999px;
+  border: 2px solid hsl(213 66% 5%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2bb673;
+}
+
+::selection {
+  background: rgba(43, 182, 115, 0.3);
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

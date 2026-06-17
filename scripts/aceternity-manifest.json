@@ -1,0 +1,594 @@
+{
+  "manifest": {
+    "text-flipping-board-demo": {
+      "files": [
+        "components/text-flipping-board-demo.tsx",
+        "components/ui/text-flipping-board.tsx"
+      ],
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/text-flipping-board.json"
+      ]
+    },
+    "macbook-scroll-demo": {
+      "files": [
+        "components/macbook-scroll-demo.tsx",
+        "components/ui/macbook-scroll.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/macbook-scroll.json"
+      ]
+    },
+    "gooey-input-demo": {
+      "files": [
+        "components/gooey-input-demo.tsx",
+        "components/ui/gooey-input.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/gooey-input.json"
+      ]
+    },
+    "3d-card-demo": {
+      "files": [
+        "components/3d-card-demo.tsx",
+        "components/ui/3d-card.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/3d-card.json"
+      ]
+    },
+    "encrypted-text-demo-2": {
+      "files": [
+        "components/encrypted-text-demo-2.tsx",
+        "components/ui/encrypted-text.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/encrypted-text.json"
+      ]
+    },
+    "text-hover-effect-demo": {
+      "files": [
+        "components/text-hover-effect-demo.tsx",
+        "components/ui/text-hover-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/text-hover-effect.json"
+      ]
+    },
+    "background-beams-with-collision-demo": {
+      "files": [
+        "components/background-beams-with-collision-demo.tsx",
+        "components/ui/background-beams-with-collision.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/background-beams-with-collision.json"
+      ]
+    },
+    "background-lines-demo": {
+      "files": [
+        "components/background-lines-demo.tsx",
+        "components/ui/background-lines.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/background-lines.json"
+      ]
+    },
+    "card-spotlight-demo": {
+      "files": [
+        "components/card-spotlight-demo.tsx",
+        "components/ui/card-spotlight.tsx",
+        "components/ui/canvas-reveal-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/card-spotlight.json"
+      ]
+    },
+    "comet-card-demo": {
+      "files": [
+        "components/comet-card-demo.tsx",
+        "components/ui/comet-card.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/comet-card.json"
+      ]
+    },
+    "cover-demo": {
+      "files": [
+        "components/cover-demo.tsx",
+        "components/ui/cover.tsx",
+        "components/ui/sparkles.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/cover.json"
+      ]
+    },
+    "container-text-flip-demo": {
+      "files": [
+        "components/container-text-flip-demo.tsx",
+        "components/ui/container-text-flip.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/container-text-flip.json"
+      ]
+    },
+    "draggable-card-demo-2": {
+      "files": [
+        "components/draggable-card-demo-2.tsx",
+        "components/ui/draggable-card.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/draggable-card.json"
+      ]
+    },
+    "expandable-card-demo-standard": {
+      "files": [
+        "components/expandable-card-demo-standard.tsx",
+        "hooks/use-outside-click.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/use-outside-click.json"
+      ]
+    },
+    "floating-dock-demo": {
+      "files": [
+        "components/floating-dock-demo.tsx",
+        "components/ui/floating-dock.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/floating-dock.json"
+      ]
+    },
+    "stateful-button-demo": {
+      "files": [
+        "components/stateful-button-demo.tsx",
+        "components/ui/stateful-button.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/stateful-button.json"
+      ]
+    },
+    "google-gemini-effect-demo": {
+      "files": [
+        "components/google-gemini-effect-demo.tsx",
+        "components/ui/google-gemini-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/google-gemini-effect.json"
+      ]
+    },
+    "3d-marquee-demo": {
+      "files": [
+        "components/3d-marquee-demo.tsx",
+        "components/ui/3d-marquee.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/3d-marquee.json"
+      ]
+    },
+    "animated-tooltip-demo": {
+      "files": [
+        "components/animated-tooltip-demo.tsx",
+        "components/ui/animated-tooltip.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/animated-tooltip.json"
+      ]
+    },
+    "background-beams-demo": {
+      "files": [
+        "components/background-beams-demo.tsx",
+        "components/ui/background-beams.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/background-beams.json"
+      ]
+    },
+    "background-gradient-animation-demo": {
+      "files": [
+        "components/background-gradient-animation-demo.tsx",
+        "components/ui/background-gradient-animation.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/background-gradient-animation.json"
+      ]
+    },
+    "bento-grid-demo-3": {
+      "files": [
+        "components/bento-grid-demo-3.tsx",
+        "components/ui/bento-grid.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/bento-grid.json"
+      ]
+    },
+    "canvas-reveal-effect-demo": {
+      "files": [
+        "components/canvas-reveal-effect-demo.tsx",
+        "components/ui/canvas-reveal-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/canvas-reveal-effect.json"
+      ]
+    },
+    "cards-demo-3": {
+      "files": [
+        "components/cards-demo-3.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "container-scroll-animation-demo": {
+      "files": [
+        "components/container-scroll-animation-demo.tsx",
+        "components/ui/container-scroll-animation.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/container-scroll-animation.json"
+      ]
+    },
+    "evervault-card-demo": {
+      "files": [
+        "components/evervault-card-demo.tsx",
+        "components/ui/evervault-card.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/evervault-card.json"
+      ]
+    },
+    "glowing-effect-demo-2": {
+      "files": [
+        "components/glowing-effect-demo-2.tsx",
+        "components/ui/glowing-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/glowing-effect.json"
+      ]
+    },
+    "hero-parallax-demo": {
+      "files": [
+        "components/hero-parallax-demo.tsx",
+        "components/ui/hero-parallax.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/hero-parallax.json"
+      ]
+    },
+    "lamp-demo": {
+      "files": [
+        "components/lamp-demo.tsx",
+        "components/ui/lamp.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/lamp.json"
+      ]
+    },
+    "link-preview-demo": {
+      "files": [
+        "components/link-preview-demo.tsx",
+        "components/ui/link-preview.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/link-preview.json"
+      ]
+    },
+    "meteors-demo": {
+      "files": [
+        "components/meteors-demo.tsx",
+        "components/ui/meteors.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/meteors.json"
+      ]
+    },
+    "moving-border-demo": {
+      "files": [
+        "components/moving-border-demo.tsx",
+        "components/ui/moving-border.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/moving-border.json"
+      ]
+    },
+    "placeholders-and-vanish-input-demo": {
+      "files": [
+        "components/placeholders-and-vanish-input-demo.tsx",
+        "components/ui/placeholders-and-vanish-input.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/placeholders-and-vanish-input.json"
+      ]
+    },
+    "sidebar-demo": {
+      "files": [
+        "components/sidebar-demo.tsx",
+        "components/ui/sidebar.tsx"
+      ],
+      "dependencies": [
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/sidebar.json"
+      ]
+    },
+    "signup-form-demo": {
+      "files": [
+        "components/signup-form-demo.tsx",
+        "components/ui/input.tsx",
+        "components/ui/label.tsx"
+      ],
+      "dependencies": [
+        "@radix-ui/react-label",
+        "@tabler/icons-react"
+      ],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/input.json",
+        "https://ui.aceternity.com/registry/label.json"
+      ]
+    },
+    "sparkles-demo": {
+      "files": [
+        "components/sparkles-demo.tsx",
+        "components/ui/sparkles.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/sparkles.json"
+      ]
+    },
+    "sticky-scroll-reveal-demo": {
+      "files": [
+        "components/sticky-scroll-reveal-demo.tsx",
+        "components/ui/sticky-scroll-reveal.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/sticky-scroll-reveal.json"
+      ]
+    },
+    "svg-mask-effect-demo": {
+      "files": [
+        "components/svg-mask-effect-demo.tsx",
+        "components/ui/svg-mask-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/svg-mask-effect.json"
+      ]
+    },
+    "text-generate-effect-demo": {
+      "files": [
+        "components/text-generate-effect-demo.tsx",
+        "components/ui/text-generate-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/text-generate-effect.json"
+      ]
+    },
+    "text-reveal-card-demo": {
+      "files": [
+        "components/text-reveal-card-demo.tsx",
+        "components/ui/text-reveal-card.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/text-reveal-card.json"
+      ]
+    },
+    "typewriter-effect-demo-1": {
+      "files": [
+        "components/typewriter-effect-demo-1.tsx",
+        "components/ui/typewriter-effect.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/typewriter-effect.json"
+      ]
+    },
+    "hover-border-gradient-demo": {
+      "files": [
+        "components/hover-border-gradient-demo.tsx",
+        "components/ui/hover-border-gradient.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/hover-border-gradient.json"
+      ]
+    },
+    "multi-step-loader-demo": {
+      "files": [
+        "components/multi-step-loader-demo.tsx",
+        "components/ui/multi-step-loader.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/multi-step-loader.json"
+      ]
+    },
+    "3d-pin-demo": {
+      "files": [
+        "components/3d-pin-demo.tsx",
+        "components/ui/3d-pin.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/3d-pin.json"
+      ]
+    },
+    "background-boxes-demo": {
+      "files": [
+        "components/background-boxes-demo.tsx",
+        "components/ui/background-boxes.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/background-boxes.json"
+      ]
+    },
+    "background-gradient-demo": {
+      "files": [
+        "components/background-gradient-demo.tsx",
+        "components/ui/background-gradient.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/background-gradient.json"
+      ]
+    },
+    "timeline-demo": {
+      "files": [
+        "components/timeline-demo.tsx",
+        "components/ui/timeline.tsx"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://ui.aceternity.com/registry/timeline.json"
+      ]
+    }
+  },
+  "allDependencies": [
+    "@radix-ui/react-hover-card",
+    "@radix-ui/react-label",
+    "@react-three/fiber",
+    "@tabler/icons-react",
+    "@tsparticles/engine",
+    "@tsparticles/react",
+    "@tsparticles/slim",
+    "@types/three",
+    "lucide-react",
+    "mini-svg-data-uri",
+    "motion",
+    "qss",
+    "three"
+  ],
+  "misses": [],
+  "files": [
+    "components/3d-card-demo.tsx",
+    "components/3d-marquee-demo.tsx",
+    "components/3d-pin-demo.tsx",
+    "components/animated-tooltip-demo.tsx",
+    "components/background-beams-demo.tsx",
+    "components/background-beams-with-collision-demo.tsx",
+    "components/background-boxes-demo.tsx",
+    "components/background-gradient-animation-demo.tsx",
+    "components/background-gradient-demo.tsx",
+    "components/background-lines-demo.tsx",
+    "components/bento-grid-demo-3.tsx",
+    "components/canvas-reveal-effect-demo.tsx",
+    "components/card-spotlight-demo.tsx",
+    "components/cards-demo-3.tsx",
+    "components/comet-card-demo.tsx",
+    "components/container-scroll-animation-demo.tsx",
+    "components/container-text-flip-demo.tsx",
+    "components/cover-demo.tsx",
+    "components/draggable-card-demo-2.tsx",
+    "components/encrypted-text-demo-2.tsx",
+    "components/evervault-card-demo.tsx",
+    "components/expandable-card-demo-standard.tsx",
+    "components/floating-dock-demo.tsx",
+    "components/glowing-effect-demo-2.tsx",
+    "components/gooey-input-demo.tsx",
+    "components/google-gemini-effect-demo.tsx",
+    "components/hero-parallax-demo.tsx",
+    "components/hover-border-gradient-demo.tsx",
+    "components/lamp-demo.tsx",
+    "components/link-preview-demo.tsx",
+    "components/macbook-scroll-demo.tsx",
+    "components/meteors-demo.tsx",
+    "components/moving-border-demo.tsx",
+    "components/multi-step-loader-demo.tsx",
+    "components/placeholders-and-vanish-input-demo.tsx",
+    "components/sidebar-demo.tsx",
+    "components/signup-form-demo.tsx",
+    "components/sparkles-demo.tsx",
+    "components/stateful-button-demo.tsx",
+    "components/sticky-scroll-reveal-demo.tsx",
+    "components/svg-mask-effect-demo.tsx",
+    "components/text-flipping-board-demo.tsx",
+    "components/text-generate-effect-demo.tsx",
+    "components/text-hover-effect-demo.tsx",
+    "components/text-reveal-card-demo.tsx",
+    "components/timeline-demo.tsx",
+    "components/typewriter-effect-demo-1.tsx",
+    "components/ui/3d-card.tsx",
+    "components/ui/3d-marquee.tsx",
+    "components/ui/3d-pin.tsx",
+    "components/ui/animated-tooltip.tsx",
+    "components/ui/background-beams-with-collision.tsx",
+    "components/ui/background-beams.tsx",
+    "components/ui/background-boxes.tsx",
+    "components/ui/background-gradient-animation.tsx",
+    "components/ui/background-gradient.tsx",
+    "components/ui/background-lines.tsx",
+    "components/ui/bento-grid.tsx",
+    "components/ui/canvas-reveal-effect.tsx",
+    "components/ui/card-spotlight.tsx",
+    "components/ui/comet-card.tsx",
+    "components/ui/container-scroll-animation.tsx",
+    "components/ui/container-text-flip.tsx",
+    "components/ui/cover.tsx",
+    "components/ui/draggable-card.tsx",
+    "components/ui/encrypted-text.tsx",
+    "components/ui/evervault-card.tsx",
+    "components/ui/floating-dock.tsx",
+    "components/ui/glowing-effect.tsx",
+    "components/ui/gooey-input.tsx",
+    "components/ui/google-gemini-effect.tsx",
+    "components/ui/hero-parallax.tsx",
+    "components/ui/hover-border-gradient.tsx",
+    "components/ui/input.tsx",
+    "components/ui/label.tsx",
+    "components/ui/lamp.tsx",
+    "components/ui/link-preview.tsx",
+    "components/ui/macbook-scroll.tsx",
+    "components/ui/meteors.tsx",
+    "components/ui/moving-border.tsx",
+    "components/ui/multi-step-loader.tsx",
+    "components/ui/placeholders-and-vanish-input.tsx",
+    "components/ui/sidebar.tsx",
+    "components/ui/sparkles.tsx",
+    "components/ui/stateful-button.tsx",
+    "components/ui/sticky-scroll-reveal.tsx",
+    "components/ui/svg-mask-effect.tsx",
+    "components/ui/text-flipping-board.tsx",
+    "components/ui/text-generate-effect.tsx",
+    "components/ui/text-hover-effect.tsx",
+    "components/ui/text-reveal-card.tsx",
+    "components/ui/timeline.tsx",
+    "components/ui/typewriter-effect.tsx",
+    "hooks/use-outside-click.tsx"
+  ]
+}
