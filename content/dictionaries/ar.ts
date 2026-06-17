@@ -14,7 +14,6 @@ export const ar: Dictionary = {
       { label: "الخدمات", href: "#services" },
       { label: "مستويات التعاقد", href: "#tiers" },
       { label: "رؤية 2030", href: "#vision" },
-      { label: "المكوّنات", href: "/components", external: true },
     ],
     cta: "ابدأ الآن",
     home: "الرئيسية",
@@ -607,7 +606,6 @@ export const ar: Dictionary = {
         links: [
           { label: "مستويات التعاقد", href: "#tiers" },
           { label: "اتصل بنا", href: "#contact" },
-          { label: "المكوّنات", href: "/components" },
         ],
       },
     ],

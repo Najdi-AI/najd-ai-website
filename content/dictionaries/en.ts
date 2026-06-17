@@ -16,7 +16,6 @@ export const en = {
       { label: "Services", href: "#services" },
       { label: "Tiers", href: "#tiers" },
       { label: "Vision 2030", href: "#vision" },
-      { label: "Components", href: "/components", external: true },
     ],
     cta: "Get Started",
     home: "Home",
@@ -644,7 +643,6 @@ export const en = {
         links: [
           { label: "Tiers", href: "#tiers" },
           { label: "Contact", href: "#contact" },
-          { label: "Components", href: "/components" },
         ],
       },
     ],

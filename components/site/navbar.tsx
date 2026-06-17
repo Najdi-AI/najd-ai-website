@@ -30,8 +30,6 @@ export function Navbar() {
   }, [open]);
 
   const links = dict.nav.links;
-  const hrefFor = (href: string, external?: boolean) =>
-    external ? `/${locale}${href}` : href;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -48,7 +46,7 @@ export function Navbar() {
           {links.map((l) => (
             <Link
               key={l.href}
-              href={hrefFor(l.href, l.external)}
+              href={l.href}
               className="text-[13px] font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
@@ -98,7 +96,7 @@ export function Navbar() {
               {links.map((l) => (
                 <Link
                   key={l.href}
-                  href={hrefFor(l.href, l.external)}
+                  href={l.href}
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-4 py-3 text-sm font-medium text-foreground/90 transition-colors hover:bg-white/5"
                 >
