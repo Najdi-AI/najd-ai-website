@@ -98,6 +98,30 @@
     background-clip: text;
     color: transparent;
   }
+  /* Saut Najdi (صوت نجدي) flagship — signature multi-hue spectrum gradient text.
+     Additive sub-brand utility; does not touch the parent .text-gradient-najd. */
+  .text-gradient-saut {
+    background-image: linear-gradient(
+      120deg,
+      #2ec4e6 0%,
+      #5b6ce5 27%,
+      #6f3fa4 50%,
+      #e20c3a 78%,
+      #ec1b3a 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Saut Najdi dot-grid ("الشيكي") texture, tinted with the saut cyan lead.
+     Pair with a background-size (e.g. [background-size:18px_18px]) at the call site. */
+  .bg-saut-dot {
+    background-image: radial-gradient(
+      rgba(46, 196, 230, 0.18) 1px,
+      transparent 1px
+    );
+    background-size: 18px 18px;
+  }
   /* Subtle brand glow */
   .glow-najd {
     box-shadow: 0 0 0 1px rgba(38, 153, 214, 0.18), 0 18px 60px -22px rgba(38, 153, 214, 0.45);

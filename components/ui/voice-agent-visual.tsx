@@ -7,9 +7,12 @@ import { cn } from "@/lib/utils";
 /**
  * VoiceAgentVisual
  * ----------------
- * A bespoke, on-brand animated visual evoking an AI voice agent:
- * a central glowing mic/orb in najd-blue, concentric pulsing rings,
- * and an animated equalizer/waveform of bars.
+ * Saut Najdi's (صوت نجدي) flagship voice motif: a bespoke animated visual
+ * evoking an AI voice agent — a central glowing mic/orb filled with the brand
+ * SPECTRUM gradient (cyan -> blue -> purple -> magenta -> red), concentric
+ * pulsing rings, and an animated equalizer/waveform of bars. The warm
+ * magenta/red end is the strongest differentiator from the cool monochrome
+ * navy/blue parent brand.
  *
  * SSR-safety:
  *   - No Math.random()/Date() anywhere that lands in SSR'd markup. Every
@@ -62,8 +65,8 @@ export function VoiceAgentVisual({ className }: { className?: string }) {
       )}
       aria-hidden="true"
     >
-      {/* Ambient brand glow behind everything */}
-      <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(38,153,214,0.22),transparent_62%)]" />
+      {/* Ambient brand glow behind everything — saut cyan lead hue */}
+      <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_50%,rgba(46,196,230,0.22),transparent_62%)]" />
 
       {/* Concentric pulsing rings (radial -> inherently symmetric) */}
       <div className="absolute inset-0 flex items-center justify-center">
@@ -73,7 +76,7 @@ export function VoiceAgentVisual({ className }: { className?: string }) {
           return (
             <motion.span
               key={i}
-              className="absolute rounded-full border border-najd-blue/30"
+              className="absolute rounded-full border border-saut-cyan/30"
               style={{
                 width: `${size}%`,
                 height: `${size}%`,
@@ -107,25 +110,29 @@ export function VoiceAgentVisual({ className }: { className?: string }) {
       {/* Expanding sonar pulse emitted from the orb */}
       {!reduce && (
         <motion.span
-          className="absolute h-[44%] w-[44%] rounded-full border border-najd-blue/40"
+          className="absolute h-[44%] w-[44%] rounded-full border border-saut-cyan/40"
           initial={{ scale: 0.6, opacity: 0.6 }}
           animate={{ scale: 2.1, opacity: 0 }}
           transition={{ duration: 3.4, repeat: Infinity, ease: "easeOut" }}
         />
       )}
 
-      {/* Central glowing orb / mic */}
+      {/* Central glowing orb / mic — Saut Najdi spectrum gradient */}
       <motion.div
-        className="glow-najd relative z-10 flex h-[40%] w-[40%] items-center justify-center rounded-full bg-najd-gradient"
+        className="relative z-10 flex h-[40%] w-[40%] items-center justify-center rounded-full bg-saut-gradient"
+        style={{
+          boxShadow:
+            "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
+        }}
         animate={
           reduce
             ? undefined
             : {
                 scale: [1, 1.05, 1],
                 boxShadow: [
-                  "0 0 0 1px rgba(38,153,214,0.18), 0 18px 60px -22px rgba(38,153,214,0.45)",
-                  "0 0 0 1px rgba(38,153,214,0.35), 0 24px 80px -18px rgba(38,153,214,0.75)",
-                  "0 0 0 1px rgba(38,153,214,0.18), 0 18px 60px -22px rgba(38,153,214,0.45)",
+                  "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
+                  "0 0 0 1px rgba(236,27,58,0.35), 0 24px 80px -18px rgba(236,27,58,0.65)",
+                  "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
                 ],
               }
         }
@@ -200,13 +207,17 @@ export function VoiceAgentVisual({ className }: { className?: string }) {
           return (
             <motion.span
               key={i}
-              className="w-[2.4%] min-w-[3px] rounded-full bg-najd-gradient-soft"
+              className="w-[2.4%] min-w-[3px] rounded-full bg-saut-gradient"
               style={{
                 // SSR-safe initial height: deterministic per index.
                 height: `${rest}%`,
                 maxHeight: "34%",
                 opacity: 0.85,
-                filter: `drop-shadow(0 0 6px rgba(38,153,214,0.35))`,
+                // Paint the spectrum across the whole equalizer so the bars
+                // collectively read as one continuous gradient (SSR-deterministic).
+                backgroundSize: `${BAR_COUNT * 100}% 100%`,
+                backgroundPosition: `${(i / (BAR_COUNT - 1)) * 100}% 50%`,
+                filter: `drop-shadow(0 0 6px rgba(46,196,230,0.35))`,
               }}
               animate={
                 reduce

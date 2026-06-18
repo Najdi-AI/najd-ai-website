@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { FloatingNavDock } from "@/components/site/floating-nav-dock";
-import { Flagship } from "@/components/sections/flagship";
+import { SautNajdiHero } from "@/components/sections/saut-najdi-hero";
 import { SautNajdiDetail } from "@/components/sections/saut-najdi-detail";
 
 export async function generateMetadata({
@@ -48,16 +48,16 @@ export default function SautNajdiPage({
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-najd-blue focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-saut-gradient focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
       >
         {dict.common.skipToContent}
       </a>
       <Navbar />
       <FloatingNavDock />
       <main id="main">
-        {/* Hero + features + call-flow pipeline */}
-        <Flagship />
-        {/* Industries · omnichannel · closing CTA · back-link */}
+        {/* Distinct Saut Najdi brand hero — spectrum, logo lockup, soundwave */}
+        <SautNajdiHero />
+        {/* Capabilities · call-flow · industries · channels · slogans · CTA */}
         <SautNajdiDetail />
       </main>
       <Footer />

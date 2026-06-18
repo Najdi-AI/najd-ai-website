@@ -63,6 +63,21 @@ const config: Config = {
           ink: "#070e1b",
           "ink-2": "#0b1626",
         },
+        // Saut Najdi (صوت نجدي) flagship sub-brand — a full multi-hue SPECTRUM
+        // with a WARM magenta/red end, deliberately distinct from the cool,
+        // monochrome navy/blue parent (najd.*). Additive only; the parent
+        // palette and the default dark theme are untouched.
+        saut: {
+          cyan: "#2EC4E6",
+          blue: "#5B6CE5",
+          purple: "#6F3FA4",
+          magenta: "#E20C3A",
+          red: "#EC1B3A",
+          charcoal: "#0D1326",
+          navy: "#112046",
+          offwhite: "#F7F8FA",
+          silver: "#E5E7EB",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -77,6 +92,9 @@ const config: Config = {
       backgroundImage: {
         "najd-gradient": "linear-gradient(135deg, #2699d6 0%, #0f6fae 52%, #172844 100%)",
         "najd-gradient-soft": "linear-gradient(135deg, #4db4e6 0%, #2699d6 100%)",
+        // Saut Najdi signature 5-stop spectrum: cyan -> blue -> purple -> magenta -> red.
+        "saut-gradient":
+          "linear-gradient(135deg, #2EC4E6 0%, #5B6CE5 27%, #6F3FA4 50%, #E20C3A 78%, #EC1B3A 100%)",
       },
       animation: {
         first: "moveVertical 30s ease infinite",
