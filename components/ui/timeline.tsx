@@ -18,11 +18,30 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
+    const el = ref.current;
+    if (!el) return;
+
+    const measure = () => {
+      setHeight(el.getBoundingClientRect().height);
+    };
+
+    // Initial measure (after layout/fonts settle).
+    measure();
+
+    // Recompute when the content box resizes (layout/font shifts, responsive
+    // breakpoints) so the beam height never goes stale.
+    let observer: ResizeObserver | undefined;
+    if (typeof ResizeObserver !== "undefined") {
+      observer = new ResizeObserver(() => measure());
+      observer.observe(el);
     }
-  }, [ref]);
+    window.addEventListener("resize", measure);
+
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -34,7 +53,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-transparent font-sans md:px-10"
+      className="relative w-full bg-transparent font-sans md:px-10"
       ref={containerRef}
     >
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">

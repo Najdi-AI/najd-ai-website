@@ -59,7 +59,10 @@ export function TechStack() {
         align="center"
       />
 
-      <div className="mt-12 overflow-hidden rounded-2xl border border-border/60 bg-white/[0.02]">
+      {/* No overflow-hidden here: the StickyScroll panel uses position:sticky and
+          must be able to pin against page scroll (a clipping/overflow ancestor
+          would disable the sticky behavior). */}
+      <div className="mt-12 rounded-2xl border border-border/60 bg-white/[0.02]">
         <StickyScroll content={content} contentClassName="!bg-najd-ink !shadow-none" />
       </div>
     </SectionShell>

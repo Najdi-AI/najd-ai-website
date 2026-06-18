@@ -10,7 +10,6 @@ const config: Config = {
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./content/**/*.{ts,tsx}",
-    "./registry/**/*.{ts,tsx}",
     "./lib/**/*.{ts,tsx}",
   ],
   theme: {
@@ -174,7 +173,7 @@ const config: Config = {
   ],
 };
 
-// Adds each Tailwind color as a global CSS variable (e.g. --najd-green),
+// Adds each Tailwind color as a global CSS variable (e.g. --najd-blue),
 // required by several Aceternity components that read CSS custom properties.
 function addVariablesForColors({ addBase, theme }: any) {
   const allColors = flattenColorPalette(theme("colors"));
