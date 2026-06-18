@@ -3,7 +3,7 @@
 import { Timeline } from "@/components/ui/timeline";
 import { Icon } from "@/components/site/icon";
 import { useI18n } from "@/components/providers";
-import { cn } from "@/lib/utils";
+import { cn, toLocaleDigits } from "@/lib/utils";
 import { Reveal, SectionHeader, SectionShell } from "@/components/sections/primitives";
 
 const STEP_ICONS = [
@@ -15,7 +15,7 @@ const STEP_ICONS = [
 ] as const;
 
 export function Process() {
-  const { dict, dir } = useI18n();
+  const { dict, dir, locale } = useI18n();
   const p = dict.process;
   const isRtl = dir === "rtl";
 
@@ -39,7 +39,7 @@ export function Process() {
             className="font-display text-2xl font-bold leading-none text-gradient-najd"
             aria-hidden="true"
           >
-            {String(i + 1).padStart(2, "0")}
+            {toLocaleDigits(String(i + 1).padStart(2, "0"), locale)}
           </span>
         </div>
 

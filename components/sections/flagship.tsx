@@ -65,7 +65,7 @@ export function Flagship() {
               <Eyebrow>{p.label}</Eyebrow>
             </Reveal>
 
-            <Reveal delay={0.05} className="flex flex-col items-start gap-3">
+            <Reveal delay={0.05} className="flex flex-col items-start gap-4 sm:gap-5">
               <span className="font-display text-6xl font-black leading-[1.05] tracking-tight text-foreground sm:text-7xl md:text-[5.5rem]">
                 {p.nameArabic}
               </span>
@@ -125,18 +125,15 @@ export function Flagship() {
               </div>
             </Reveal>
 
-            {/* Stats */}
+            {/* Stats — dividers come from a 1px grid gap that lets the border
+                color show through (robust for any count / column layout, no
+                per-index border bookkeeping). */}
             <Reveal delay={0.3} className="w-full">
-              <dl className="grid w-full max-w-xl grid-cols-2 overflow-hidden rounded-2xl border border-border/70 bg-white/[0.02] sm:grid-cols-4">
-                {p.stats.map((s, i) => (
+              <dl className="grid w-full max-w-xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/60 sm:grid-cols-4">
+                {p.stats.map((s) => (
                   <div
                     key={s.label}
-                    className={cn(
-                      "flex flex-col items-center gap-1 px-3 py-5",
-                      i !== p.stats.length - 1 && "sm:border-e sm:border-border/60",
-                      i % 2 === 0 && "border-e border-border/60 sm:border-e",
-                      i < 2 && "border-b border-border/60 sm:border-b-0"
-                    )}
+                    className="flex flex-col items-center gap-1 bg-najd-ink px-3 py-5"
                   >
                     <dd className="font-display text-3xl font-bold text-gradient-najd">
                       {s.num}
@@ -165,7 +162,6 @@ export function Flagship() {
             eyebrow={p.featuresLabel}
             titleLead={p.featuresTitle}
             highlight={p.featuresHighlight}
-            desc={p.tagline}
           />
 
           <motion.ul

@@ -70,17 +70,18 @@ export const StickyScroll = ({
       }}
       className="relative rounded-md"
     >
-      <div className="mx-auto flex max-w-5xl justify-center gap-10 px-4 py-10 lg:px-10">
+      <div className="mx-auto flex max-w-5xl justify-center gap-10 px-4 py-12 lg:px-10">
         {/* Text column scrolls naturally with the page. */}
         <div className="relative flex w-full items-start lg:w-1/2">
           <div className="w-full max-w-2xl">
             {content.map((item, index) => (
               <div
                 key={item.title + index}
-                // Each block gives one card ~half a viewport of page scroll —
-                // enough to keep the active-card sync smooth without leaving the
-                // section sparse/over-tall (was 60vh × N groups ≈ 4 screens).
-                className="flex min-h-[42vh] flex-col justify-center py-8"
+                // Each block gives one card a tighter slice of page scroll and
+                // vertically centers its copy, so the active item sits next to
+                // the pinned panel without a large void above/below it. Tuned
+                // down from 42vh (which left the section reading sparse).
+                className="flex min-h-[26vh] flex-col justify-center py-6"
               >
                 <motion.h2
                   initial={{ opacity: 0 }}
@@ -92,7 +93,7 @@ export const StickyScroll = ({
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                  className="mt-6 max-w-sm text-foreground/70"
+                  className="mt-4 max-w-sm text-foreground/70"
                 >
                   {item.description}
                 </motion.p>
@@ -101,12 +102,15 @@ export const StickyScroll = ({
           </div>
         </div>
 
-        {/* Sticky brand panel — pins within the section as the text scrolls. */}
+        {/* Sticky brand panel — pins within the section as the text scrolls.
+            Sizes to its content (min-h-60) instead of a fixed h-72 that left the
+            lower half empty. Pins at a fixed top-28 (predictable, under the
+            navbar) so the sticky math stays robust. */}
         <div className="hidden lg:block lg:w-1/2">
           <div
             style={{ background: backgroundGradient }}
             className={cn(
-              "sticky top-24 h-72 w-full overflow-hidden rounded-md bg-najd-ink",
+              "sticky top-28 min-h-52 w-full overflow-hidden rounded-md bg-najd-ink",
               contentClassName,
             )}
           >

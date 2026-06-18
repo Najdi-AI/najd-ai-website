@@ -40,7 +40,9 @@
     --secondary: 213 38% 14%;
     --secondary-foreground: 210 40% 96%;
     --muted: 213 33% 14%;
-    --muted-foreground: 213 22% 66%;
+    /* Raised lightness 66% -> 72% so small captions (11px/13px) on faint cards
+       clear WCAG AA comfortably; stays on-brand (cool navy-tinted grey). */
+    --muted-foreground: 213 20% 72%;
     --accent: 201 68% 49%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 46%;
@@ -58,6 +60,15 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+  }
+  /* Guard against stray horizontal page overflow from full-bleed decorative
+     glows/blobs (e.g. `-right-32` blur planes). Even a few px of overflow makes
+     RTL pages initialize horizontally scrolled, which clips right-anchored
+     content across every section. `clip` (not `hidden`/`auto`) avoids creating
+     a scroll container, so `position: sticky` (tech-stack panel) keeps working. */
+  html,
+  body {
+    overflow-x: clip;
   }
   body {
     @apply bg-background text-foreground;

@@ -38,3 +38,7 @@ next-env.d.ts
 # brand working files (source assets kept outside repo)
 /.brand-src
 /.brand-hn
+
+# local QA artifacts (screenshot gallery + ad-hoc verification scripts)
+/screenshots/
+/.shots.mjs

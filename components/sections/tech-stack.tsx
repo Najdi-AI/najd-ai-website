@@ -11,7 +11,7 @@ function StackPanel({ name, pills }: { name: string; pills: string[] }) {
   return (
     <div
       dir={dir}
-      className="relative flex h-full w-full flex-col gap-4 overflow-hidden rounded-md bg-najd-ink p-6"
+      className="relative flex h-full w-full flex-col justify-center gap-4 overflow-hidden rounded-md bg-najd-ink p-7"
     >
       {/* brand gradient tint + glows over the panel */}
       <div className="pointer-events-none absolute inset-0 bg-najd-gradient opacity-[0.14]" />

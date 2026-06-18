@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowLeft, ArrowRight, Phone, MessageCircle, Send } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, toLocaleDigits } from "@/lib/utils";
 import { useI18n } from "@/components/providers";
 import {
   Reveal,
@@ -54,7 +54,7 @@ export function SautNajdiDetail() {
               className="group flex items-center gap-4 rounded-2xl border border-border/60 bg-white/[0.02] p-5 transition-colors hover:border-najd-blue/40"
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-najd-blue/[0.1] font-display text-sm font-bold text-najd-blue">
-                {String(i + 1).padStart(2, "0")}
+                {toLocaleDigits(String(i + 1).padStart(2, "0"), locale)}
               </span>
               <span className="font-display text-base font-bold text-foreground">
                 {industry}
