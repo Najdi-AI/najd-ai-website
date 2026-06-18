@@ -62,7 +62,10 @@ export function ContainerTextFlip({
   }, [words, interval]);
 
   return (
-    <motion.p
+    // A <div>, not a <p>: this is a visual word-flip container whose children
+    // are block-level motion.divs, and a <div> may not be nested inside a <p>
+    // (that mismatch crashed hydration and switched the page to client render).
+    <motion.div
       layout
       layoutId={`words-here-${id}`}
       animate={{ width }}
@@ -122,6 +125,6 @@ export function ContainerTextFlip({
           )}
         </motion.div>
       </motion.div>
-    </motion.p>
+    </motion.div>
   );
 }

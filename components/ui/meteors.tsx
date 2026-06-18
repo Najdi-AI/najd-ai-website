@@ -3,6 +3,14 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import React from "react";
 
+// Deterministic pseudo-random in [0, 1) seeded by n. Identical on the server and
+// the client, so the per-meteor inline styles below stay stable across hydration
+// (Math.random() here caused a "server HTML didn't match" hydration error).
+const seeded = (n: number) => {
+  const x = Math.sin(n * 12.9898) * 43758.5453;
+  return x - Math.floor(x);
+};
+
 export const Meteors = ({
   number,
   className,
@@ -33,8 +41,8 @@ export const Meteors = ({
             style={{
               top: "-40px", // Start above the container
               left: position + "px",
-              animationDelay: Math.random() * 5 + "s", // Random delay between 0-5s
-              animationDuration: Math.floor(Math.random() * (10 - 5) + 5) + "s", // Keep some randomness in duration
+              animationDelay: (seeded(idx) * 5).toFixed(2) + "s", // 0-5s, stable per index
+              animationDuration: Math.floor(seeded(idx + 1) * 5 + 5) + "s", // 5-9s, stable per index
             }}
           ></span>
         );
