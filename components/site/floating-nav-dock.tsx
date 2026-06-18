@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Home, LayoutGrid, Layers, Wallet, Flag, Mail } from "lucide-react";
+import { Home, Mic, LayoutGrid, Layers, Wallet, Flag, Mail } from "lucide-react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { useI18n } from "@/components/providers";
 
@@ -21,11 +21,12 @@ export function FloatingNavDock() {
   const cls = "h-full w-full text-najd-blue";
   const items = [
     { title: locale === "ar" ? "الرئيسية" : "Home", icon: <Home className={cls} />, href: `/${locale}` },
-    { title: locale === "ar" ? "الأقسام" : "Divisions", icon: <LayoutGrid className={cls} />, href: "#divisions" },
-    { title: locale === "ar" ? "الخدمات" : "Services", icon: <Layers className={cls} />, href: "#services" },
-    { title: locale === "ar" ? "التعاقد" : "Tiers", icon: <Wallet className={cls} />, href: "#tiers" },
-    { title: locale === "ar" ? "رؤية 2030" : "Vision", icon: <Flag className={cls} />, href: "#vision" },
-    { title: locale === "ar" ? "تواصل" : "Contact", icon: <Mail className={cls} />, href: "#contact" },
+    { title: locale === "ar" ? "صوت نجدي" : "Saut Najdi", icon: <Mic className={cls} />, href: `/${locale}#product` },
+    { title: locale === "ar" ? "الأقسام" : "Divisions", icon: <LayoutGrid className={cls} />, href: `/${locale}#divisions` },
+    { title: locale === "ar" ? "الخدمات" : "Services", icon: <Layers className={cls} />, href: `/${locale}#services` },
+    { title: locale === "ar" ? "التعاقد" : "Tiers", icon: <Wallet className={cls} />, href: `/${locale}#tiers` },
+    { title: locale === "ar" ? "رؤية 2030" : "Vision", icon: <Flag className={cls} />, href: `/${locale}#vision` },
+    { title: locale === "ar" ? "تواصل" : "Contact", icon: <Mail className={cls} />, href: `/${locale}#contact` },
   ];
 
   return (

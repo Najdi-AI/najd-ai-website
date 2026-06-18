@@ -30,6 +30,10 @@ export function Navbar() {
   }, [open]);
 
   const links = dict.nav.links;
+  // In-page anchors are made locale-absolute so they also work from sub-pages
+  // like /[locale]/saut-najdi (where the home sections don't exist).
+  const toHref = (href: string) =>
+    href.startsWith("#") ? `/${locale}${href}` : href;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -46,7 +50,7 @@ export function Navbar() {
           {links.map((l) => (
             <Link
               key={l.href}
-              href={l.href}
+              href={toHref(l.href)}
               className="text-[13px] font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
@@ -60,7 +64,7 @@ export function Navbar() {
             <LanguageSwitcher />
           </div>
           <Link
-            href="#contact"
+            href={`/${locale}#contact`}
             className="group hidden items-center gap-1.5 rounded-full bg-najd-blue px-4 py-2 text-[13px] font-semibold text-najd-ink shadow-[0_8px_24px_-10px_rgba(38,153,214,0.7)] transition-all hover:-translate-y-0.5 hover:bg-najd-blue-light sm:inline-flex"
           >
             {dict.nav.cta}
@@ -96,7 +100,7 @@ export function Navbar() {
               {links.map((l) => (
                 <Link
                   key={l.href}
-                  href={l.href}
+                  href={toHref(l.href)}
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-4 py-3 text-sm font-medium text-foreground/90 transition-colors hover:bg-white/5"
                 >
@@ -104,7 +108,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Link
-                href="#contact"
+                href={`/${locale}#contact`}
                 onClick={() => setOpen(false)}
                 className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-najd-blue px-4 py-3 text-sm font-semibold text-najd-ink hover:bg-najd-blue-light"
               >

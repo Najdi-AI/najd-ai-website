@@ -12,6 +12,7 @@ export const en = {
 
   nav: {
     links: [
+      { label: "Saut Najdi", href: "#product" },
       { label: "Divisions", href: "#divisions" },
       { label: "Services", href: "#services" },
       { label: "Tiers", href: "#tiers" },
@@ -41,6 +42,80 @@ export const en = {
       { num: "100%", label: "Full-Stack" },
     ],
     brandword: "NAJD AI SOLUTIONS",
+  },
+
+  product: {
+    label: "Our Flagship Product",
+    name: "Saut Najdi",
+    nameArabic: "صوت نجدي",
+    by: "by Najd AI Solutions",
+    badge: "In pilot · Saudi-dialect voice AI",
+    tagline: "The AI voice agent that speaks Saudi fluently — reservations, inquiries, and 24/7 customer service.",
+    descriptor: "AI Voice Agent Platform",
+    desc: "Saut Najdi is a Saudi-built, Arabic-first AI voice agent that answers your business calls in natural Najdi dialect. It books appointments and reservations, answers inquiries, and handles customer service around the clock — completing tasks end-to-end and escalating to a human the moment one is needed. Currently in pilot, pre-commercial deployment.",
+    ctaPrimary: "Book a demo",
+    ctaSecondary: "Explore Saut Najdi",
+    backToSite: "Back to Najd AI Solutions",
+    featuresLabel: "Capabilities",
+    featuresTitle: "What",
+    featuresHighlight: "Saut Najdi can do",
+    stats: [
+      { num: "24/7", label: "Always answering" },
+      { num: "0", label: "Hold time" },
+      { num: "3", label: "Channels" },
+      { num: "AR", label: "Najdi-native" },
+    ],
+    features: [
+      {
+        icon: "languages",
+        title: "Speaks Saudi, natively",
+        desc: "Built Arabic-first and tuned for the Najdi dialect — so callers are understood and answered the way they actually speak, not in stiff, off-tone Arabic.",
+      },
+      {
+        icon: "phone-call",
+        title: "Answers 24/7, instantly",
+        desc: "Every call is picked up the moment it rings — day, night, weekends, and peak rushes. No hold music, no missed business, no after-hours gap.",
+      },
+      {
+        icon: "calendar-check",
+        title: "Books appointments & reservations",
+        desc: "It checks live availability and creates the booking inside the call — confirming the table, slot, or appointment end-to-end, not just logging a request.",
+      },
+      {
+        icon: "brain-circuit",
+        title: "Completes tasks, not menus",
+        desc: "A reasoning agent that listens, decides, and acts with real tool-calling — the opposite of a rigid IVR press-1 menu. It finishes the job, then confirms it.",
+      },
+      {
+        icon: "headset",
+        title: "Remembers callers & escalates",
+        desc: "It recognizes returning callers and carries the context forward, and when a conversation needs a person it hands off live to your team as a co-pilot.",
+      },
+      {
+        icon: "message-circle",
+        title: "One agent, every channel",
+        desc: "Voice, WhatsApp, and Telegram run on a single customer profile — so a caller, a chatter, and a returning client are all the same recognized customer.",
+      },
+    ],
+    pipelineTitle: "How a Saut Najdi call flows",
+    pipeline: [
+      { label: "Connect", desc: "The call arrives over standard telephony and is bridged to the agent in real time." },
+      { label: "Listen", desc: "Speech is transcribed live and normalized for Saudi Arabic as the caller speaks." },
+      { label: "Think", desc: "The agent reasons over the request and calls the right tools — checking availability or creating a booking." },
+      { label: "Speak", desc: "It replies in a natural Saudi voice, and the caller can interrupt and steer the conversation at any moment." },
+      { label: "Remember", desc: "The interaction is saved to one customer profile, and the agent escalates to a human whenever needed." },
+    ],
+    industriesTitle: "Built for Saudi businesses that live on the phone",
+    industries: [
+      "Restaurants & F&B",
+      "Clinics & healthcare",
+      "Hotels & hospitality",
+      "Salons, beauty & fitness",
+      "Real estate",
+      "Logistics & car rentals",
+    ],
+    channelsTitle: "One agent, every channel",
+    channels: ["Voice calls", "WhatsApp", "Telegram"],
   },
 
   differentiator: {

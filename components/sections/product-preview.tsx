@@ -15,7 +15,7 @@ export function ProductPreview() {
 
   return (
     <section
-      id="product"
+      id="dashboard"
       dir={dir}
       className="relative w-full overflow-hidden bg-najd-ink py-10 md:py-0"
     >

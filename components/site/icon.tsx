@@ -43,6 +43,10 @@ import {
   Database,
   Shield,
   Sparkles,
+  Languages,
+  CalendarCheck,
+  Headset,
+  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 
@@ -90,6 +94,10 @@ const ICONS: Record<string, LucideIcon> = {
   globe: Globe,
   database: Database,
   shield: Shield,
+  languages: Languages,
+  "calendar-check": CalendarCheck,
+  headset: Headset,
+  "message-circle": MessageCircle,
 };
 
 export function Icon({

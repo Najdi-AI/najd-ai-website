@@ -4,6 +4,7 @@ import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
 import { FloatingNavDock } from "@/components/site/floating-nav-dock";
 import { Hero } from "@/components/sections/hero";
+import { Flagship } from "@/components/sections/flagship";
 import { BrandBand } from "@/components/sections/brand-band";
 import { Differentiator } from "@/components/sections/differentiator";
 import { Divisions } from "@/components/sections/divisions";
@@ -34,6 +35,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
       <FloatingNavDock />
       <main id="main">
         <Hero />
+        <Flagship />
         <BrandBand />
         <Differentiator />
         <Divisions />
