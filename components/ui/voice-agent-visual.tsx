@@ -1,7 +1,7 @@
 "use client";
 
 import { useId } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -31,10 +31,15 @@ import { cn } from "@/lib/utils";
  *
  * Reduced motion:
  *   - The app wraps the tree in <MotionConfig reducedMotion="user">, which
- *     already neutralizes transform/opacity keyframe loops. We additionally
- *     read useReducedMotion() to render a calm static state (bars at their
- *     resting height, rings shown without pulsing) so the piece looks
- *     intentional rather than frozen mid-animation.
+ *     already neutralizes transform/opacity keyframe loops for users who ask
+ *     for it — the bars/rings/sonar simply hold at their deterministic
+ *     resting state (the `style`/`initial` values are the SSR baseline).
+ *   - We deliberately do NOT branch the DOM on useReducedMotion(): the hook
+ *     returns false on the server and true on a reduced-motion client, so
+ *     gating elements on it (e.g. the sonar pulse) changes the node tree
+ *     between server and client and triggers a hydration mismatch. The SAME
+ *     elements with the SAME `animate`/`transition` props are always rendered;
+ *     MotionConfig handles the reduced-motion downgrade transparently.
  */
 
 const BAR_COUNT = 13; // odd -> a true center bar, symmetric on both sides
@@ -50,7 +55,6 @@ function barHeight(i: number): number {
 }
 
 export function VoiceAgentVisual({ className }: { className?: string }) {
-  const reduce = useReducedMotion();
   const gradientId = useId();
   const glowId = useId();
 
@@ -83,39 +87,32 @@ export function VoiceAgentVisual({ className }: { className?: string }) {
                 // SSR-safe: opacity derived from index, not random.
                 opacity: 0.5 - i * 0.12,
               }}
-              animate={
-                reduce
-                  ? undefined
-                  : {
-                      scale: [1, 1.12, 1],
-                      opacity: [0.5 - i * 0.12, 0.12, 0.5 - i * 0.12],
-                    }
-              }
-              transition={
-                reduce
-                  ? undefined
-                  : {
-                      duration: 3.2 + i * 0.6,
-                      // delay is a transition prop -> client-only, safe to vary
-                      delay: i * 0.45,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }
-              }
+              animate={{
+                scale: [1, 1.12, 1],
+                opacity: [0.5 - i * 0.12, 0.12, 0.5 - i * 0.12],
+              }}
+              transition={{
+                duration: 3.2 + i * 0.6,
+                // delay is a transition prop -> client-only, safe to vary
+                delay: i * 0.45,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
           );
         })}
       </div>
 
-      {/* Expanding sonar pulse emitted from the orb */}
-      {!reduce && (
-        <motion.span
-          className="absolute h-[44%] w-[44%] rounded-full border border-saut-cyan/40"
-          initial={{ scale: 0.6, opacity: 0.6 }}
-          animate={{ scale: 2.1, opacity: 0 }}
-          transition={{ duration: 3.4, repeat: Infinity, ease: "easeOut" }}
-        />
-      )}
+      {/* Expanding sonar pulse emitted from the orb.
+          Always rendered (identical server/client DOM); MotionConfig
+          neutralizes the loop for reduced-motion users, leaving it at the
+          deterministic `initial` resting state. */}
+      <motion.span
+        className="absolute h-[44%] w-[44%] rounded-full border border-saut-cyan/40"
+        initial={{ scale: 0.6, opacity: 0.6 }}
+        animate={{ scale: 2.1, opacity: 0 }}
+        transition={{ duration: 3.4, repeat: Infinity, ease: "easeOut" }}
+      />
 
       {/* Central glowing orb / mic — Saut Najdi spectrum gradient */}
       <motion.div
@@ -124,23 +121,15 @@ export function VoiceAgentVisual({ className }: { className?: string }) {
           boxShadow:
             "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
         }}
-        animate={
-          reduce
-            ? undefined
-            : {
-                scale: [1, 1.05, 1],
-                boxShadow: [
-                  "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
-                  "0 0 0 1px rgba(236,27,58,0.35), 0 24px 80px -18px rgba(236,27,58,0.65)",
-                  "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
-                ],
-              }
-        }
-        transition={
-          reduce
-            ? undefined
-            : { duration: 2.8, repeat: Infinity, ease: "easeInOut" }
-        }
+        animate={{
+          scale: [1, 1.05, 1],
+          boxShadow: [
+            "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
+            "0 0 0 1px rgba(236,27,58,0.35), 0 24px 80px -18px rgba(236,27,58,0.65)",
+            "0 0 0 1px rgba(46,196,230,0.18), 0 18px 60px -22px rgba(111,63,164,0.45)",
+          ],
+        }}
+        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
       >
         {/* Inner sheen */}
         <div className="absolute inset-[3px] rounded-full bg-[radial-gradient(circle_at_50%_28%,rgba(255,255,255,0.35),transparent_55%)]" />
@@ -219,26 +208,18 @@ export function VoiceAgentVisual({ className }: { className?: string }) {
                 backgroundPosition: `${(i / (BAR_COUNT - 1)) * 100}% 50%`,
                 filter: `drop-shadow(0 0 6px rgba(46,196,230,0.35))`,
               }}
-              animate={
-                reduce
-                  ? undefined
-                  : {
-                      height: [`${rest}%`, `${peak}%`, `${rest}%`],
-                      opacity: [0.7, 1, 0.7],
-                    }
-              }
-              transition={
-                reduce
-                  ? undefined
-                  : {
-                      // Client-only randomness: never serialized into SSR HTML.
-                      duration: 0.7 + Math.random() * 0.8,
-                      delay: Math.random() * 0.6,
-                      repeat: Infinity,
-                      repeatType: "mirror",
-                      ease: "easeInOut",
-                    }
-              }
+              animate={{
+                height: [`${rest}%`, `${peak}%`, `${rest}%`],
+                opacity: [0.7, 1, 0.7],
+              }}
+              transition={{
+                // Client-only randomness: never serialized into SSR HTML.
+                duration: 0.7 + Math.random() * 0.8,
+                delay: Math.random() * 0.6,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
             />
           );
         })}

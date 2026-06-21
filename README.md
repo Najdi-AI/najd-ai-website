@@ -40,7 +40,7 @@ time with the toggle in the nav. `/` redirects to `/en` (or `/ar`).
 ### The marketing site — `/[locale]`
 
 A single long-form landing page composed of brand-aligned sections (in order): **Hero →
-Saut Najdi flagship → Brand band → The Najd Advantage → Divisions → Dashboard preview →
+Saut Najdi flagship → Brand band → The Najd Advantage → Divisions →
 Services → Tiers → Intelligence divider → Industries → Process → Tech stack → Vision 2030 →
 CTA → Contact**.
 

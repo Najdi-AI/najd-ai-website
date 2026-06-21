@@ -8,7 +8,6 @@ import { Flagship } from "@/components/sections/flagship";
 import { BrandBand } from "@/components/sections/brand-band";
 import { Differentiator } from "@/components/sections/differentiator";
 import { Divisions } from "@/components/sections/divisions";
-import { ProductPreview } from "@/components/sections/product-preview";
 import { Services } from "@/components/sections/services";
 import { Tiers } from "@/components/sections/tiers";
 import { GeminiBand } from "@/components/sections/gemini-band";
@@ -39,7 +38,6 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         <BrandBand />
         <Differentiator />
         <Divisions />
-        <ProductPreview />
         <Services />
         <Tiers />
         <GeminiBand />

@@ -25,7 +25,7 @@ export function Vision() {
       {/* Lamp header: brand-tinted glow behind the title. The lamp's inner
           beams are hardcoded cyan; we override the slate background to brand
           ink and overlay green/teal radial glows so it reads on-brand. */}
-      <LampContainer className="min-h-[26rem] rounded-3xl bg-najd-ink sm:min-h-[30rem]">
+      <LampContainer className="min-h-[19rem] rounded-3xl bg-najd-ink sm:min-h-[21rem]">
         {/* brand glow overlays on top of the lamp's cyan core */}
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_55%_45%_at_50%_38%,rgba(38,153,214,0.20),transparent_65%)]" />
         <div className="pointer-events-none absolute inset-x-0 top-[34%] -z-10 mx-auto h-40 w-[26rem] max-w-[80%] rounded-full bg-najd-teal/20 blur-3xl" />
@@ -37,7 +37,9 @@ export function Vision() {
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
           className="flex flex-col items-center gap-5 text-center"
         >
-          <Eyebrow>{v.label}</Eyebrow>
+          <Eyebrow className="border-najd-blue-light/50 bg-najd-ink/70 text-najd-blue-light shadow-[0_0_20px_-6px_rgba(38,153,214,0.5)]">
+            {v.label}
+          </Eyebrow>
           <h2 className="max-w-3xl text-balance font-display text-3xl font-bold leading-[1.12] tracking-tight text-foreground sm:text-4xl md:text-[2.75rem]">
             {v.titleLead}{" "}
             <GradientText>{v.titleHighlight}</GradientText>
@@ -45,10 +47,13 @@ export function Vision() {
         </motion.div>
       </LampContainer>
 
-      {/* Description + grid live in the constrained content column. */}
-      <div className="mx-auto -mt-10 w-full max-w-7xl px-5 sm:-mt-12 sm:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-[17px]">
+      {/* Description + grid live in the constrained content column. It sits ABOVE
+          the lamp's stacking context (relative z-10) so the negative margin can pull
+          the copy up into a cohesive block with the title without the lamp's
+          backdrop-blur band washing it out. */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8">
+        <Reveal className="mx-auto -mt-20 max-w-2xl text-center sm:-mt-[136px]">
+          <p className="text-pretty text-base leading-relaxed text-foreground/80 sm:text-[17px]">
             {v.desc}
           </p>
         </Reveal>
