@@ -27,14 +27,18 @@ export const en = {
   theme: { toLight: "Light mode", toDark: "Dark mode" },
 
   hero: {
-    badge: "NAJD AI SOLUTIONS · RIYADH, KSA",
-    titleLead: "Enterprise AI &",
+    badge: "MAKERS OF SAUT NAJDI · RIYADH, KSA",
+    // titleLead + titleHighlight2 compose H1 line 1 ("Meet [Saut Najdi]"); titleTail is line 2.
+    // titleHighlight is intentionally retained — it is the center title of the Gemini band
+    // (components/sections/gemini-band.tsx), not consumed by the hero H1 anymore.
+    titleLead: "Meet",
     titleHighlight: "Intelligent",
-    titleHighlight2: "Infrastructure",
+    titleHighlight2: "Saut Najdi",
+    titleTail: "the first voice your customers hear.",
     typewriter: ["Intelligent Systems.", "Arabic-Native AI.", "Production-Grade.", "Built for Vision 2030."],
-    sub: "We don't build AI features. We build intelligent systems that transform how organizations operate, decide, and grow — from model to product, strategy to production.",
-    ctaPrimary: "Explore Our Solutions",
-    ctaSecondary: "View Service Catalog",
+    sub: "The flagship voice agent from Najd AI Solutions — Saudi Arabia's enterprise AI studio, delivering the full stack from strategy to production.",
+    ctaPrimary: "Hear Saut Najdi",
+    ctaSecondary: "Explore Service Catalog",
     stats: [
       { num: "8", label: "Divisions" },
       { num: "25+", label: "AI Solutions" },
@@ -58,7 +62,7 @@ export const en = {
     dialectLine: "Your voice agent, fluent in the Najdi dialect.",
     desc: "Saut Najdi is a Saudi-built, Arabic-first AI voice agent that answers your business calls in natural Najdi dialect. It books appointments and reservations, answers inquiries, and handles customer service around the clock — completing tasks end-to-end and escalating to a human the moment one is needed. Currently in pilot, pre-commercial deployment.",
     ctaPrimary: "Book a demo",
-    ctaSecondary: "Explore Saut Najdi",
+    ctaSecondary: "See capabilities",
     backToSite: "Back to Najd AI Solutions",
     featuresLabel: "Capabilities",
     featuresTitle: "What",
@@ -670,7 +674,7 @@ export const en = {
     titleHighlight: "Future of Your Organization.",
     sub: "From strategy to production. From model to product. Najd delivers the full stack of AI — built in Saudi Arabia, for Saudi Arabia.",
     ctaPrimary: "Start a Conversation",
-    ctaSecondary: "Download Full Catalog",
+    ctaSecondary: "Request the full catalog",
   },
 
   contact: {
@@ -692,7 +696,7 @@ export const en = {
       company: "Company",
       companyPlaceholder: "Your organization",
       interest: "Area of interest",
-      interestOptions: ["Automation & Agents", "Knowledge & RAG", "Data & Analytics", "Talent AI", "Finance & Trading", "Infrastructure & Security", "Government & Emerging", "Consulting & Strategy"],
+      interestOptions: ["Automation & Agents", "Saut Najdi / Voice AI", "Knowledge & RAG", "Data & Analytics", "Talent AI", "Finance & Trading", "Infrastructure & Security", "Government & Emerging", "Consulting & Strategy"],
       message: "How can we help?",
       messagePlaceholder: "Briefly describe your project or challenge…",
       submit: "Send message",

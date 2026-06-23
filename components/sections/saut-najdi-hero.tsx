@@ -94,7 +94,7 @@ export function SautNajdiHero() {
             <Reveal delay={0.22}>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href={`/${locale}#contact`}
+                  href={`/${locale}?interest=saut-najdi#contact`}
                   className="group inline-flex items-center gap-2 rounded-full bg-saut-gradient px-7 py-3.5 text-sm font-semibold text-white shadow-[0_16px_44px_-14px_rgba(226,12,58,0.6)] transition-transform [text-shadow:0_1px_2px_rgba(0,0,0,0.45)] hover:-translate-y-0.5"
                 >
                   {p.ctaPrimary}

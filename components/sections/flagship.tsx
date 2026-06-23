@@ -82,8 +82,12 @@ export function Flagship() {
             </Reveal>
 
             <Reveal delay={0.05} className="flex flex-col items-start gap-4 sm:gap-5">
-              {/* Arabic wordmark carries the full Saut Najdi spectrum. */}
-              <span className="font-display text-6xl font-black leading-[1.05] tracking-tight text-gradient-saut sm:text-7xl md:text-[5.5rem]">
+              {/* Arabic wordmark carries the full Saut Najdi spectrum.
+                  A single RELATIVE leading (1.3) gives Arabic descenders/hamza
+                  enough vertical room for the bg-clip-text gradient without the
+                  old over-spaced absolute 100px/145px line-heights; it scales
+                  cleanly across text-6xl → 5.5rem. */}
+              <span className="font-display text-6xl font-black leading-[1.3] tracking-tight text-gradient-saut sm:text-7xl md:text-[5.5rem]">
                 {p.nameArabic}
               </span>
               <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -132,7 +136,7 @@ export function Flagship() {
             <Reveal delay={0.24}>
               <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  href={`/${locale}#contact`}
+                  href={`/${locale}?interest=saut-najdi#contact`}
                   className="group inline-flex items-center gap-2 rounded-full bg-saut-gradient px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_36px_-12px_rgba(46,196,230,0.75)] transition-transform [text-shadow:0_1px_2px_rgba(0,0,0,0.45)] hover:-translate-y-0.5"
                 >
                   {p.ctaPrimary}
@@ -176,12 +180,28 @@ export function Flagship() {
 
           {/* Visual column */}
           <Reveal y={30} delay={0.12} className="flex flex-col items-center justify-center gap-6">
-            <div className="relative w-full max-w-lg">
+            <motion.div
+              className="relative w-full max-w-lg"
+              animate={{
+                y: [0, -6, 0],
+                rotate: [0, -0.55, 0.35, 0],
+                scale: [1, 1.006, 1],
+              }}
+              transition={{ duration: 8.4, repeat: Infinity, ease: "easeInOut" }}
+            >
               {/* Spectrum halo: cyan lead bleeding into the warm Najdi-red tail. */}
-              <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(46,196,230,0.20),transparent_60%)]" />
-              <div className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_70%_75%,rgba(236,27,58,0.16),transparent_60%)]" />
+              <motion.div
+                className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(46,196,230,0.20),transparent_60%)]"
+                animate={{ scale: [0.98, 1.05, 1], opacity: [0.66, 0.9, 0.72] }}
+                transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="pointer-events-none absolute inset-0 rounded-full bg-[radial-gradient(circle_at_70%_75%,rgba(236,27,58,0.16),transparent_60%)]"
+                animate={{ scale: [1.02, 0.98, 1.015], opacity: [0.62, 0.86, 0.68] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              />
               <VoiceAgentVisual className="relative" />
-            </div>
+            </motion.div>
             {/* Voiceprint caption — heroLine reinforces the voice-first promise. */}
             <p className="max-w-xs text-center text-sm font-medium text-muted-foreground">
               {p.heroLine}

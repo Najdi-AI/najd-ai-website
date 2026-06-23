@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { siteConfig } from "@/lib/site";
@@ -13,17 +14,19 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const locale: Locale = isLocale(params.locale) ? params.locale : "en";
+  if (!isLocale(params.locale)) notFound();
+  const locale: Locale = params.locale;
   const dict = getDictionary(locale);
   const p = dict.product;
   const title = `${p.name} — ${p.descriptor}`;
+  const ogImage = `/og/saut-najdi-${locale}.png`;
 
   return {
     title,
     description: p.tagline,
     alternates: {
       canonical: `/${locale}/saut-najdi`,
-      languages: { en: "/en/saut-najdi", ar: "/ar/saut-najdi" },
+      languages: { en: "/en/saut-najdi", ar: "/ar/saut-najdi", "x-default": "/en/saut-najdi" },
     },
     openGraph: {
       type: "website",
@@ -32,6 +35,20 @@ export async function generateMetadata({
       title,
       description: p.tagline,
       siteName: siteConfig.name,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: p.tagline,
+      images: [ogImage],
     },
   };
 }
@@ -41,7 +58,8 @@ export default function SautNajdiPage({
 }: {
   params: { locale: string };
 }) {
-  const locale = isLocale(params.locale) ? params.locale : "en";
+  if (!isLocale(params.locale)) notFound();
+  const locale = params.locale;
   const dict = getDictionary(locale);
 
   return (

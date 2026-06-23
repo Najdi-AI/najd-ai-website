@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { Navbar } from "@/components/site/navbar";
@@ -19,7 +20,8 @@ import { Cta } from "@/components/sections/cta";
 import { Contact } from "@/components/sections/contact";
 
 export default function HomePage({ params }: { params: { locale: string } }) {
-  const locale = isLocale(params.locale) ? params.locale : "en";
+  if (!isLocale(params.locale)) notFound();
+  const locale = params.locale;
   const dict = getDictionary(locale);
 
   return (

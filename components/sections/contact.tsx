@@ -1,6 +1,15 @@
 "use client";
 
-import { useState, type FormEvent, type HTMLAttributes } from "react";
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type HTMLAttributes,
+} from "react";
+import { useSearchParams } from "next/navigation";
 import { MessageCircle, Mail, Phone, MapPin, Loader2, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/components/providers";
@@ -27,6 +36,28 @@ export function Contact() {
 
   const [status, setStatus] = useState<Status>("idle");
   const [errorKey, setErrorKey] = useState<null | "required" | "invalidEmail">(null);
+
+  // Preselect a matching interest option when a CTA lands here with ?interest=<slug>.
+  // Each slug maps to a bilingual matcher; the first option it matches wins. We only
+  // force the selection on the rising edge (param absent/other → present), so a manual
+  // change the user makes afterwards is never clobbered on re-render. An unknown or
+  // absent slug leaves the current selection untouched.
+  const handleInterestParam = useCallback(
+    (requestedInterest: string | null) => {
+      if (!requestedInterest) return;
+      const matchers: Record<string, (option: string) => boolean> = {
+        "saut-najdi": (option) =>
+          option.includes("Saut Najdi") || option.includes("صوت نجدي"),
+        consulting: (option) =>
+          option.includes("Consulting") || option.includes("الاستشارات"),
+      };
+      const matcher = matchers[requestedInterest];
+      if (!matcher) return;
+      const matchedOption = f.interestOptions.find(matcher);
+      if (matchedOption) setInterest(matchedOption);
+    },
+    [f.interestOptions]
+  );
 
   const quickLinks = [
     {
@@ -101,6 +132,12 @@ export function Contact() {
 
   return (
     <SectionShell id="contact">
+      {/* Reads ?interest reactively (client nav too). Needs its own Suspense
+          boundary because useSearchParams() de-opts the page to CSR otherwise. */}
+      <Suspense fallback={null}>
+        <InterestParamSync onInterest={handleInterestParam} />
+      </Suspense>
+
       <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
         {/* LEFT: header + quick contact */}
         <div className="flex flex-col gap-8">
@@ -319,4 +356,33 @@ export function Contact() {
       </div>
     </SectionShell>
   );
+}
+
+/**
+ * Reads the `interest` search param reactively and lifts it to the parent on
+ * the rising edge only (each time its value changes). `useSearchParams` updates
+ * on client navigation, so this covers both a cold load of
+ * `/{locale}?interest=<slug>#contact` and a same-page <Link> click to it,
+ * without touching the History API. Renders nothing, so it never affects the
+ * SSR markup. Must live under a <Suspense> boundary (App Router requirement).
+ */
+function InterestParamSync({
+  onInterest,
+}: {
+  onInterest: (interest: string | null) => void;
+}) {
+  const searchParams = useSearchParams();
+  const interestParam = searchParams.get("interest");
+  const previousRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    // Only act on a real transition to a new param value so we don't re-force the
+    // selection (and clobber a user's manual choice) on unrelated re-renders.
+    if (interestParam !== previousRef.current) {
+      previousRef.current = interestParam;
+      onInterest(interestParam);
+    }
+  }, [interestParam, onInterest]);
+
+  return null;
 }

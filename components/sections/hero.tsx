@@ -6,7 +6,6 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/components/providers";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { Cover } from "@/components/ui/cover";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { GradientText } from "@/components/sections/primitives";
 
@@ -47,12 +46,12 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.05 }}
           className="mt-7 text-balance font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-6xl md:text-7xl"
         >
-          {h.titleLead}
-          <br />
-          <span className="mt-2 inline-flex flex-wrap items-center justify-center gap-x-3">
-            <Cover className="text-foreground">{h.titleHighlight}</Cover>{" "}
+          <span className="inline-flex flex-wrap items-center justify-center gap-x-3">
+            <span>{h.titleLead}</span>{" "}
             <GradientText>{h.titleHighlight2}</GradientText>
           </span>
+          <br />
+          <span className="mt-2 inline-block">{h.titleTail}</span>
         </motion.h1>
 
         <motion.div
@@ -85,7 +84,7 @@ export function Hero() {
           className="mt-9 flex flex-wrap items-center justify-center gap-3"
         >
           <Link
-            href="#services"
+            href="#product"
             className="group inline-flex items-center gap-2 rounded-full bg-najd-blue px-6 py-3 text-sm font-semibold text-najd-ink shadow-[0_12px_36px_-12px_rgba(38,153,214,0.75)] transition-transform hover:-translate-y-0.5 hover:bg-najd-blue-light"
           >
             {h.ctaPrimary}
@@ -97,7 +96,7 @@ export function Hero() {
             />
           </Link>
           <Link
-            href="#divisions"
+            href="#services"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.03] px-6 py-3 text-sm font-semibold text-foreground/90 backdrop-blur transition-colors hover:border-najd-blue/40 hover:text-foreground"
           >
             {h.ctaSecondary}

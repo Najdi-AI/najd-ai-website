@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
  * SautNajdiLogo
  * -------------
  * Renders the OFFICIAL Saut Najdi (صوت نجدي) brand artwork from the bundled
- * SVG files in /brand/saut-najdi/. Never recreate, stretch, recolor, rotate,
+ * assets in /brand/saut-najdi/. Never recreate, stretch, recolor, rotate,
  * or add effects to the logo — this component only places the unmodified
  * official assets.
  *
@@ -17,9 +17,8 @@ import { cn } from "@/lib/utils";
  *       its own document and uses any available system font) rather than
  *       next/image, whose sandbox/CSP pipeline would strip the embedded
  *       styling.
- *   - 'mark': the gradient squircle app-icon (app-icon.svg). This file is made
- *       of PURE PATHS (no text), so it always renders faithfully — the
- *       font-safe choice for tight spaces, favicons, and avatars.
+ *   - 'mark': the open-circle waveform symbol as a transparent PNG exported
+ *       from the official guideline artwork.
  *
  * This is a plain (server-renderable) component — no client hooks, no motion —
  * so it is safe to import from server or client trees.
@@ -30,16 +29,14 @@ type SautNajdiLogoTheme = "light" | "dark";
 
 const ASSET_BASE = "/brand/saut-najdi";
 
-// Intrinsic aspect ratios of the source SVGs, used to give the <img> sensible
-// width/height so it never causes layout shift. Both the lockups and the
-// app-icon mark share the 792x612 viewBox (≈1.29:1, near-square) — the
-// width/height below MUST match that ratio or the image aspect-snaps on load.
+// Intrinsic aspect ratios of the source assets, used to give the <img> sensible
+// width/height so it never causes layout shift.
 const SIZES: Record<
   SautNajdiLogoVariant,
   { width: number; height: number }
 > = {
   lockup: { width: 156, height: 120 },
-  mark: { width: 96, height: 74 },
+  mark: { width: 1024, height: 1024 },
 };
 
 export function SautNajdiLogo({
@@ -53,7 +50,7 @@ export function SautNajdiLogo({
 }) {
   const src =
     variant === "mark"
-      ? `${ASSET_BASE}/app-icon.svg`
+      ? `${ASSET_BASE}/mark-guideline.png`
       : theme === "light"
         ? `${ASSET_BASE}/logo-light.svg`
         : `${ASSET_BASE}/logo-dark.svg`;

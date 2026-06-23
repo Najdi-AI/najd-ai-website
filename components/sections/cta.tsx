@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, FileDown } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/components/providers";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { Reveal, Eyebrow, GradientText } from "@/components/sections/primitives";
 
 export function Cta() {
-  const { dict, dir } = useI18n();
+  const { dict, dir, locale } = useI18n();
   const c = dict.cta;
   const rtl = dir === "rtl";
 
@@ -68,10 +68,10 @@ export function Cta() {
                 />
               </Link>
               <Link
-                href="#contact"
+                href={`/${locale}?interest=consulting#contact`}
                 className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/[0.06] px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:border-white/60 hover:bg-white/[0.12]"
               >
-                <FileDown className="h-4 w-4" />
+                <FileText className="h-4 w-4" aria-hidden="true" />
                 {c.ctaSecondary}
               </Link>
             </div>

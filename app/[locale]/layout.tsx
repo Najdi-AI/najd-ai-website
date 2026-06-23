@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { notFound } from "next/navigation";
 import "../globals.css";
 import { Providers } from "@/components/providers";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -20,8 +21,15 @@ const thmanyah = localFont({
   display: "swap",
 });
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+function resolveLocale(value: string): Locale {
+  if (!isLocale(value)) notFound();
+  return value;
 }
 
 export async function generateMetadata({
@@ -29,8 +37,9 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const locale: Locale = isLocale(params.locale) ? params.locale : "en";
+  const locale = resolveLocale(params.locale);
   const dict = getDictionary(locale);
+  const ogImage = `/og/najd-home-${locale}.png`;
   return {
     metadataBase: new URL(siteConfig.url),
     title: { default: dict.meta.title, template: `%s · ${siteConfig.name}` },
@@ -49,7 +58,7 @@ export async function generateMetadata({
     icons: { icon: "/brand/logo-mark.svg", apple: "/brand/logo-mark.svg" },
     alternates: {
       canonical: `/${locale}`,
-      languages: { en: "/en", ar: "/ar" },
+      languages: { en: "/en", ar: "/ar", "x-default": "/en" },
     },
     openGraph: {
       type: "website",
@@ -58,11 +67,20 @@ export async function generateMetadata({
       title: dict.meta.title,
       description: dict.meta.description,
       siteName: siteConfig.name,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: dict.meta.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
+      images: [ogImage],
     },
   };
 }
@@ -74,7 +92,7 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const locale: Locale = isLocale(params.locale) ? params.locale : "en";
+  const locale = resolveLocale(params.locale);
   const direction = dir(locale);
   const dict = getDictionary(locale);
 

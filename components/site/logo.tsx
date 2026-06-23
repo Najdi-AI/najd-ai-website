@@ -4,9 +4,8 @@ import { cn } from "@/lib/utils";
 import type { Locale } from "@/lib/i18n/config";
 
 /**
- * Najd AI Solutions brand lockup: the official blue-gradient symbol mark
- * (immutable per brand guidelines) + the wordmark in Thmanyah. White wordmark
- * for the dark UI; "AI" / "نجد" accented in brand blue.
+ * Najd AI Solutions brand lockup: the official white Arabic/English wordmark
+ * and blue-gradient symbol mark, rendered from the bundled vector artwork.
  */
 export function Logo({
   locale,
@@ -23,32 +22,19 @@ export function Logo({
 }) {
   const isAr = locale === "ar";
   const label = isAr ? "حلول نجد للذكاء الاصطناعي" : "Najd AI Solutions";
+  const imageHeight = wordmark ? Math.round(symbolSize * 1.28) : symbolSize;
+  const imageWidth = wordmark ? Math.round(imageHeight * 2.56) : symbolSize;
+  const imageSrc = wordmark ? "/brand/logo-lockup-white.svg" : "/brand/logo-mark.svg";
   const inner = (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span className={cn("inline-flex items-center", className)}>
       <Image
-        src="/brand/logo-mark.svg"
+        src={imageSrc}
         alt={label}
-        width={symbolSize}
-        height={symbolSize}
+        width={imageWidth}
+        height={imageHeight}
         priority
-        className="shrink-0"
+        className="h-auto shrink-0"
       />
-      {wordmark && (
-        <span
-          className="font-display font-bold leading-none tracking-tight text-foreground"
-          style={{ fontSize: Math.round(symbolSize * 0.46) }}
-        >
-          {isAr ? (
-            <>
-              حلول <span className="text-najd-blue">نجد</span>
-            </>
-          ) : (
-            <>
-              Najd <span className="text-najd-blue">AI</span>
-            </>
-          )}
-        </span>
-      )}
     </span>
   );
 
