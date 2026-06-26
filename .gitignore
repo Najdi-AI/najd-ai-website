@@ -42,3 +42,9 @@ next-env.d.ts
 # local QA artifacts (screenshot gallery + ad-hoc verification scripts)
 /screenshots/
 /.shots.mjs
+
+# local verification / screenshot scratch dirs (regenerable, not synced)
+/.verify-*/
+/.macbook-shots/
+/.playwright-out/
+/.scroll-verify/
