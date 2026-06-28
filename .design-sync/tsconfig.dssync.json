@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "..",
+    "paths": {
+      "@/*": ["./*"],
+      "next/dynamic": ["./.design-sync/shims/next-dynamic.tsx"],
+      "@react-three/fiber": ["./.design-sync/shims/r3f-stub.tsx"],
+      "three": ["./.design-sync/shims/three-stub.ts"]
+    }
+  }
+}
