@@ -48,3 +48,16 @@ next-env.d.ts
 /.macbook-shots/
 /.playwright-out/
 /.scroll-verify/
+
+# design-sync (claude.ai/design) — staged scripts, build output, machine state.
+# Durable sync inputs under .design-sync/ (config.json, NOTES.md, conventions.md,
+# previews/, shims/, build/{font-faces.css,tailwind.dssync.config.ts,build-css.mjs,fonts/},
+# tsconfig.dssync.json) ARE committed; only the regenerable/ephemeral paths below are not.
+/.ds-sync/
+/ds-bundle/
+/.design-sync/.cache/
+/.design-sync/learnings/
+/.design-sync/node_modules
+/.design-sync/build/ds-input.css
+/.design-sync/build/ds.compiled.css
+/__synth__.tsx

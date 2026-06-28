@@ -1,0 +1,73 @@
+/* Najd AI Solutions — Thmanyah brand typeface (@font-face + family tokens).
+   Prepended to app/globals.css to form the Tailwind compile input. url()s are
+   relative to the compiled stylesheet; the converter copies these woff2 into
+   the bundle's fonts/ and rewrites the urls. */
+
+/* Thmanyah Sans — primary brand family (Arabic + Latin), used everywhere. */
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Sans";
+  src: url("./fonts/thmanyahsans-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Thmanyah Serif Display — brand editorial/display serif (large headlines).
+   Available as an alternate display family via --font-thmanyah-display. */
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./fonts/thmanyahserifdisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./fonts/thmanyahserifdisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Thmanyah Serif Display";
+  src: url("./fonts/thmanyahserifdisplay-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* The site injects --font-thmanyah at runtime via next/font; the bundle
+     defines it statically so font-sans/arabic/display resolve to the brand
+     typeface in every rendered design. */
+  --font-thmanyah: "Thmanyah Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-thmanyah-display: "Thmanyah Serif Display", "Thmanyah Sans", Georgia, serif;
+}
